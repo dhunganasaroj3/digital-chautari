@@ -6,8 +6,8 @@ CURRENT SPRINT: 1
 |---|---|---|---|
 | S1.0 | ✅ | 2026-09-26 | PROGRESS.md + CONTENT-TODO.md created |
 | S1.1 | ✅ | 2026-09-26 | node v22.23.1 via nvm (pre-installed; default alias `22` verified); `.nvmrc` written |
-| S1.2 | 🔵 in progress | — | scaffolding |
-| S1.3 | ⬜ | — | |
+| S1.2 | ✅ | 2026-09-26 | next 16.3.6 · react 19.2.8 · tailwind 4.3.3 · TS 5.9.3 · pnpm 12.6.0; `pnpm build` exit 0, dev server HTTP 200; commit 30d07b9 |
+| S1.3 | ⬜ next | — | |
 | S1.4 | ⬜ | — | |
 | S1.5 | ⬜ | — | |
 | S1.6 | ⬜ | — | |
@@ -30,4 +30,7 @@ CURRENT SPRINT: 1
 - none
 
 ## Decisions taken
-- (any small implementation choice you had to make that the brief didn't cover — one line each)
+- Repo-local `git config commit.gpgsign false`: global config enforces GPG signing, pinentry times out in unattended sessions (user can re-enable per-repo if desired).
+- S1.0/S1.1 artifacts (PROGRESS.md, CONTENT-TODO.md, .nvmrc) committed inside the S1.2 scaffold commit — `git init` only happens in S1.2 per the brief.
+- create-next-app@16 generated extra `AGENTS.md` / `CLAUDE.md` + `pnpm-workspace.yaml` (Next 16 defaults) — kept as-is.
+- `docs/`, PROGRESS.md, CONTENT-TODO.md, .nvmrc were temporarily moved to /tmp during `create-next-app` (it refuses non-empty dirs) and restored immediately after.
