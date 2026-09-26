@@ -7,20 +7,23 @@ type Props = {
   href?: string;
   /** Marks the card for the canonical GSAP reveal when inside a StaggerGroup. */
   reveal?: boolean;
+  /** Sets data-scheme="dark" on the card itself (token remap for stand-out tiers). */
+  dark?: boolean;
   className?: string;
 };
 
-export function Card({ children, href, reveal = false, className = "" }: Props) {
+export function Card({ children, href, reveal = false, dark = false, className = "" }: Props) {
   const classes = `group rounded-card border border-border-default bg-surface-card p-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover ${className}`;
+  const scheme = dark ? "dark" : undefined;
   if (href) {
     return (
-      <Link href={href} data-reveal={reveal || undefined} className={classes}>
+      <Link href={href} data-reveal={reveal || undefined} data-scheme={scheme} className={classes}>
         {children}
       </Link>
     );
   }
   return (
-    <div data-reveal={reveal || undefined} className={classes}>
+    <div data-reveal={reveal || undefined} data-scheme={scheme} className={classes}>
       {children}
     </div>
   );
