@@ -50,6 +50,7 @@
   --spacing-section-hero-bottom: 48px;
   --spacing-gutter: 40px; /* desktop side padding */
   --spacing-gutter-mobile: 22px;
+  --container-dc: 1120px; /* spec container width */
 
   /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
   --breakpoint-nav: 760px;
@@ -131,5 +132,46 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ── Custom utilities (spec constants; the only place for literals) ── */
+
+/* 1120px container, 22px mobile / 40px desktop gutters (spec) */
+@utility container-dc {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-dc);
+  padding-inline: var(--spacing-gutter-mobile);
+}
+@media (min-width: 760px) {
+  .container-dc {
+    padding-inline: var(--spacing-gutter);
+  }
+}
+
+/* Section rhythm: 64/48 standard · 48 tight · 84/48 hero (spec), halved < 760px */
+@utility section-standard {
+  padding-block: 32px;
+}
+@media (min-width: 760px) {
+  .section-standard {
+    padding-block: var(--spacing-section);
+  }
+}
+@utility section-tight {
+  padding-block: 32px;
+}
+@media (min-width: 760px) {
+  .section-tight {
+    padding-block: var(--spacing-section-tight);
+  }
+}
+@utility section-hero {
+  padding-block: 56px 32px;
+}
+@media (min-width: 760px) {
+  .section-hero {
+    padding-block: var(--spacing-section-hero-top) var(--spacing-section-hero-bottom);
   }
 }
