@@ -1,3 +1,40 @@
+import { HERO } from "@/lib/data/home";
+import { toIcon } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
+import { StatBar } from "@/components/ui/StatBar";
+import { Hero } from "@/components/sections/Hero";
+import { FeatureStrip } from "@/components/sections/FeatureStrip";
+import { WhoWeAre } from "@/components/sections/WhoWeAre";
+import { DarkStatsBanner } from "@/components/sections/DarkStatsBanner";
+import { ProductsTeaser } from "@/components/sections/ProductsTeaser";
+
+function HomeHero() {
+  const stats = HERO.stats.map((stat) => ({ ...stat, icon: toIcon(stat.icon) }));
+  return (
+    <Hero eyebrow={HERO.eyebrow} title={HERO.title} gradient={HERO.gradient} lede={HERO.lede}>
+      <div className="flex flex-wrap items-center gap-4">
+        <Button href={HERO.primaryCta.href} variant="primary">
+          {HERO.primaryCta.label}
+        </Button>
+        <Button href={HERO.ghostCta.href} variant="ghost">
+          {HERO.ghostCta.label}
+        </Button>
+      </div>
+      <div className="mt-10">
+        <StatBar items={stats} />
+      </div>
+    </Hero>
+  );
+}
+
 export default function Home() {
-  return <div className="container-dc section-standard">Home — sections land in S1.18–S1.19.</div>;
+  return (
+    <>
+      <HomeHero />
+      <FeatureStrip />
+      <WhoWeAre />
+      <DarkStatsBanner />
+      <ProductsTeaser />
+    </>
+  );
 }
