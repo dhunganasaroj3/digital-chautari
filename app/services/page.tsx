@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCategoryRow } from "@/components/sections/ServiceCategoryRow";
 import { PricingTable } from "@/components/sections/PricingTable";
-import { CATEGORIES, SERVICES_HERO } from "@/lib/data/services";
+import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
+import { WhyWorkWithUs } from "@/components/sections/WhyWorkWithUs";
+import { ClosingCta } from "@/components/sections/ClosingCta";
+import { CATEGORIES, SERVICES_CTA, SERVICES_HERO } from "@/lib/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -17,6 +20,9 @@ export default function ServicesPage() {
         <ServiceCategoryRow key={category.id} category={category} flip={i % 2 === 1} />
       ))}
       <PricingTable />
+      <IndustriesGrid />
+      <WhyWorkWithUs />
+      <ClosingCta variant="dark" {...SERVICES_CTA} />
     </>
   );
 }

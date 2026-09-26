@@ -117,3 +117,10 @@ export const WHY_US = {
     "Cross-platform expertise",
   ],
 } as const;
+
+export const SERVICES_CTA = {
+  eyebrow: "Next step",
+  title: "Let's find the right service for you",
+  cta: { label: "Book a Consultation →", href: "/contact" },
+  secondaryCta: { label: "View Pricing", href: "/services#pricing" },
+} as const;
