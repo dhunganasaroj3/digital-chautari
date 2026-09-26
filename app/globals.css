@@ -51,6 +51,7 @@
   --spacing-gutter: 40px; /* desktop side padding */
   --spacing-gutter-mobile: 22px;
   --container-dc: 1120px; /* spec container width */
+  --spacing-card: 22px; /* spec card padding */
 
   /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
   --breakpoint-nav: 760px;
@@ -173,5 +174,12 @@
 @media (min-width: 760px) {
   .section-hero {
     padding-block: var(--spacing-section-hero-top) var(--spacing-section-hero-bottom);
+  }
+}
+
+/* Card hover chip scale — spec 1.08×, motion-safe users only */
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .chip-scale {
+    transform: scale(1.08);
   }
 }

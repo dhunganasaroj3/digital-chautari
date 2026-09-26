@@ -1,0 +1,27 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+type Props = {
+  children: ReactNode;
+  /** Renders the whole card as a link. */
+  href?: string;
+  /** Marks the card for the canonical GSAP reveal when inside a StaggerGroup. */
+  reveal?: boolean;
+  className?: string;
+};
+
+export function Card({ children, href, reveal = false, className = "" }: Props) {
+  const classes = `group rounded-card border border-border-default bg-surface-card p-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover ${className}`;
+  if (href) {
+    return (
+      <Link href={href} data-reveal={reveal || undefined} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <div data-reveal={reveal || undefined} className={classes}>
+      {children}
+    </div>
+  );
+}
