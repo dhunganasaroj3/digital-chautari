@@ -14,7 +14,7 @@
     "node": ">=22"
   },
   "simple-git-hooks": {
-    "pre-commit": ". \"$HOME/.nvm/nvm.sh\" >/dev/null 2>&1; pnpm lint-staged"
+    "pre-commit": "bash -c '. \"$HOME/.nvm/nvm.sh\" >/dev/null 2>&1; nvm use --silent 22 >/dev/null 2>&1; pnpm lint-staged'"
   },
   "lint-staged": {
     "*.{ts,tsx,css}": ["prettier --write"]
