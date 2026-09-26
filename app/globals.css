@@ -52,6 +52,8 @@
   --spacing-gutter-mobile: 22px;
   --container-dc: 1120px; /* spec container width */
   --spacing-card: 22px; /* spec card padding */
+  --text-col: 660px; /* hero text column, mobile */
+  --text-col-lg: 720px; /* hero text column, ≥760px */
 
   /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
   --breakpoint-nav: 760px;
@@ -182,4 +184,30 @@
   .group:hover .chip-scale {
     transform: scale(1.08);
   }
+}
+
+/* Hero text column (spec: ≤720px) */
+@utility text-col {
+  max-width: var(--text-col);
+}
+@media (min-width: 760px) {
+  .text-col {
+    max-width: var(--text-col-lg);
+  }
+}
+
+/* Hero background — mint → paper wash + radial glows top right (spec) */
+@utility hero-bg {
+  background:
+    radial-gradient(
+      600px 300px at 85% -10%,
+      color-mix(in srgb, var(--color-dc-teal-500) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      500px 260px at 95% 0%,
+      color-mix(in srgb, var(--color-dc-gold-500) 10%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(180deg, var(--color-dc-mint-100), var(--color-surface) 70%);
 }

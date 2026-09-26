@@ -9,3 +9,20 @@ export const CHIP_TONES = [
 ] as const;
 
 export const chipTone = (i: number) => CHIP_TONES[((i % 5) + 5) % 5] ?? "bg-chip-1";
+
+/** Splits a title around the exact `gradient` substring → [before, after]. */
+export function splitGradient(title: string, gradient: string): [string, string] {
+  const idx = title.indexOf(gradient);
+  if (idx === -1) return [title, ""];
+  return [title.slice(0, idx), title.slice(idx + gradient.length)];
+}
+
+/** "2026-03-12" → "March 12, 2026" (UTC-anchored, so it never shifts a day). */
+export function formatDate(iso: string): string {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${iso}T00:00:00Z`));
+}
