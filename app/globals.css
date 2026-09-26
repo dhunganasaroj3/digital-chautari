@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Layer 1: primitives (PDF palette, verbatim) ───────────── */
+  --color-dc-teal-500: #0f9488;
+  --color-dc-teal-600: #0b6f66;
+  --color-dc-gold-500: #e0a930;
+  --color-dc-gold-600: #b9821b; /* A-2: gold stop for gradients on LIGHT bg */
+  --color-dc-leaf-500: #7fae3a;
+  --color-dc-ink-900: #101826;
+  --color-dc-navy-900: #0b1220;
+  --color-dc-navy-800: #101d2b;
+  --color-dc-navy-700: #223140;
+  --color-dc-paper-50: #fbfbf9;
+  --color-dc-line-200: #e7e5df;
+  --color-dc-muted-500: #5b6472;
+  --color-dc-mint-100: #e7f5ea;
+  --color-dc-palteal-100: #e7f2f4;
+  --color-dc-palgold-100: #fdf1de;
+  --color-dc-pallilac-100: #f4e9f6;
+  --color-dc-palpink-100: #fdeef0;
+  --color-dc-action-600: #0d7f76; /* A-1: solid button/link surface (AA w/ white) */
+
+  /* ── Layer 2: semantic (components use ONLY these) ─────────── */
+  --color-surface: var(--color-dc-paper-50);
+  --color-surface-card: #ffffff;
+  --color-text-primary: var(--color-dc-ink-900);
+  --color-text-muted: var(--color-dc-muted-500);
+  --color-border-default: var(--color-dc-line-200);
+  --color-action: var(--color-dc-action-600);
+  --color-action-hover: var(--color-dc-teal-600);
+  --color-on-action: #ffffff;
+  --color-accent-gold: var(--color-dc-gold-500);
+  --color-accent-leaf: var(--color-dc-leaf-500);
+  --color-chip-1: var(--color-dc-mint-100);
+  --color-chip-2: var(--color-dc-palteal-100);
+  --color-chip-3: var(--color-dc-palgold-100);
+  --color-chip-4: var(--color-dc-pallilac-100);
+  --color-chip-5: var(--color-dc-palpink-100);
+
+  /* ── Layer 3: component tokens ─────────────────────────────── */
+  --radius-chip: 10px; /* spec: 9–10 → 10 */
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 16px; /* spec: 14–20 → 16 */
+  --shadow-card-hover: 0 16px 30px -18px rgba(16, 24, 38, 0.2);
+  --spacing-section: 64px; /* standard */
+  --spacing-section-tight: 48px;
+  --spacing-section-hero-top: 84px;
+  --spacing-section-hero-bottom: 48px;
+  --spacing-gutter: 40px; /* desktop side padding */
+  --spacing-gutter-mobile: 22px;
+
+  /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
+  --breakpoint-nav: 760px;
+
+  /* ── Typography (pinned exact values inside the spec's ranges) ─
+     pattern: mobile value, then *-lg used as nav:text-…-lg        */
+  --text-h1: 2rem;
+  --text-h1--line-height: 1.15; /* 32px */
+  --text-h1-lg: 2.875rem;
+  --text-h1-lg--line-height: 1.12; /* 46px */
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 1.25; /* 28px */
+  --text-h2-lg: 1.875rem;
+  --text-h2-lg--line-height: 1.22; /* 30px */
+  --text-h3: 1rem;
+  --text-h3--line-height: 1.4; /* 16px */
+  --text-h3-lg: 1.0625rem;
+  --text-h3-lg--line-height: 1.35; /* 17px */
+  --text-lede: 0.9375rem;
+  --text-lede--line-height: 1.6; /* 15px */
+  --text-lede-lg: 1.0625rem;
+  --text-lede-lg--line-height: 1.6; /* 17px */
+  --text-small: 0.75rem;
+  --text-small--line-height: 1.5; /* 12px */
+  --text-small-lg: 0.8125rem;
+  --text-small-lg--line-height: 1.5; /* 13px */
+  --text-btn: 0.875rem;
+  --text-btn--line-height: 1; /* 14px */
+  --text-btn-lg: 0.9375rem;
+  --text-btn-lg--line-height: 1; /* 15px */
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1.4; /* 11px */
+  --text-eyebrow-lg: 0.8125rem;
+  --text-eyebrow-lg--line-height: 1.4; /* 13px */
+
+  --tracking-eyebrow: 0.02em; /* spec: eyebrow letter-spacing */
+
+  --font-heading: var(--font-sora), "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark scheme remap — set data-scheme="dark" on any navy section */
+[data-scheme="dark"] {
+  --color-surface: var(--color-dc-navy-900);
+  --color-surface-card: var(--color-dc-navy-800);
+  --color-text-primary: #ffffff;
+  --color-text-muted: #a7b4c7;
+  --color-border-default: var(--color-dc-navy-700);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: 16px; /* spec base */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-dc-teal-500);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

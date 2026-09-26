@@ -8,8 +8,8 @@ CURRENT SPRINT: 1
 | S1.1 | ✅ | 2026-09-26 | node v22.23.1 via nvm (pre-installed; default alias `22` verified); `.nvmrc` written |
 | S1.2 | ✅ | 2026-09-26 | next 16.3.6 · react 19.2.8 · tailwind 4.3.3 · TS 5.9.3 · pnpm 12.6.0; `pnpm build` exit 0, dev server HTTP 200; commit 30d07b9 |
 | S1.3 | ✅ | 2026-09-26 | prettier+tailwind plugin, editorconfig, engines, hooks verified firing, noUncheckedIndexedAccess |
-| S1.4 | 🔵 in progress | — | CI workflow |
-| S1.5 | ⬜ | — | |
+| S1.4 | ✅ | 2026-09-26 | ci.yml committed; pnpm version input omitted (action-setup reads packageManager = pnpm@12.6.0) |
+| S1.5 | 🔵 in progress | — | token system |
 | S1.6 | ⬜ | — | |
 | S1.7 | ⬜ | — | |
 | S1.8 | ⬜ | — | |
