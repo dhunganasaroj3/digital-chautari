@@ -28,6 +28,13 @@ import {
   Search,
   PenTool,
   Rocket,
+  Share2,
+  BarChart3,
+  PenLine,
+  Lightbulb,
+  Globe,
+  Smartphone,
+  Wrench,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -60,6 +67,13 @@ export const ICONS = {
   Search,
   PenTool,
   Rocket,
+  Share2,
+  BarChart3,
+  PenLine,
+  Lightbulb,
+  Globe,
+  Smartphone,
+  Wrench,
 } as const;
 
 export type IconName = keyof typeof ICONS;
