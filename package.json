@@ -6,7 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "simple-git-hooks": {
+    "pre-commit": ". \"$HOME/.nvm/nvm.sh\" >/dev/null 2>&1; pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,css}": ["prettier --write"]
   },
   "dependencies": {
     "next": "16.3.6",
@@ -20,6 +31,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "simple-git-hooks": "^2.14.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
