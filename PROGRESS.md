@@ -25,6 +25,8 @@ CURRENT SPRINT: 2
 | S1.18 | ✅ | 2026-09-27 | HomeHero, FeatureStrip, WhoWeAre, DarkStatsBanner, ProductsTeaser |
 | S1.19 | ✅ | 2026-09-27 | SectorsGrid, ProcessSteps, Testimonials, BlogTeaser, ClosingCta; Button onGradient variants |
 | S1.20 | ✅ | 2026-09-27 | all gates green; hex audit clean; keyboard/trap/skip-link verified live; REVIEW-REQUEST-S1.md written; CURRENT SPRINT → 2 |
+| S2.1 | ✅ | 2026-09-26 | lib/data/services.ts verbatim; ICONS +7 (Share2, BarChart3, PenLine, Lightbulb, Globe, Smartphone, Wrench) |
+| S2.2 | ✅ | 2026-09-26 | 3 rows with scroll-mt ids, subs ×4 in StaggerGroup mini-cards; rows alternate via conditional nav:order classes; /services prerenders |
 
 ## Blocked
 - none
