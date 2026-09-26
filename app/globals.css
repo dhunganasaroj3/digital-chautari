@@ -54,6 +54,7 @@
   --spacing-card: 22px; /* spec card padding */
   --text-col: 660px; /* hero text column, mobile */
   --text-col-lg: 720px; /* hero text column, ≥760px */
+  --ratio-blog: 16 / 9; /* blog placeholder image ratio */
 
   /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
   --breakpoint-nav: 760px;
@@ -194,6 +195,16 @@
   .text-col {
     max-width: var(--text-col-lg);
   }
+}
+
+/* Blog placeholder image ratio (spec 16:9) */
+@utility ratio-blog {
+  aspect-ratio: var(--ratio-blog);
+}
+
+/* Closing CTA panel — Home only (teal → blue gradient per spec) */
+@utility cta-gradient {
+  background: linear-gradient(135deg, var(--color-dc-teal-500), #2563eb);
 }
 
 /* Page transition — 0.45s fade + 8px rise on every route (killed by reduced-motion) */

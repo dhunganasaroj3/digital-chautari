@@ -7,6 +7,11 @@ import { FeatureStrip } from "@/components/sections/FeatureStrip";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { DarkStatsBanner } from "@/components/sections/DarkStatsBanner";
 import { ProductsTeaser } from "@/components/sections/ProductsTeaser";
+import { SectorsGrid } from "@/components/sections/SectorsGrid";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { BlogTeaser } from "@/components/sections/BlogTeaser";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 
 function HomeHero() {
   const stats = HERO.stats.map((stat) => ({ ...stat, icon: toIcon(stat.icon) }));
@@ -35,6 +40,11 @@ export default function Home() {
       <WhoWeAre />
       <DarkStatsBanner />
       <ProductsTeaser />
+      <SectorsGrid />
+      <ProcessSteps />
+      <Testimonials />
+      <BlogTeaser />
+      <ClosingCta />
     </>
   );
 }
