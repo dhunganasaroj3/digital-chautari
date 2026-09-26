@@ -196,6 +196,21 @@
   }
 }
 
+/* Page transition — 0.45s fade + 8px rise on every route (killed by reduced-motion) */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.page-enter {
+  animation: page-enter 0.45s ease both;
+}
+
 /* Hero background — mint → paper wash + radial glows top right (spec) */
 @utility hero-bg {
   background:
