@@ -52,8 +52,6 @@
   --spacing-gutter-mobile: 22px;
   --container-dc: 1120px; /* spec container width */
   --spacing-card: 22px; /* spec card padding */
-  --text-col: 660px; /* hero text column, mobile */
-  --text-col-lg: 720px; /* hero text column, ≥760px */
   --ratio-blog: 16 / 9; /* blog placeholder image ratio */
 
   /* custom spec breakpoint (760px, NOT Tailwind's 768 md) */
@@ -187,13 +185,16 @@
   }
 }
 
-/* Hero text column (spec: ≤720px) */
+/* Hero text column (spec: ≤720px).
+   NOTE: values live here, NOT as --text-* @theme tokens — the --text-* namespace
+   generates font-size utilities, so a --text-col token would make `text-col`
+   resolve as font-size: 660px. */
 @utility text-col {
-  max-width: var(--text-col);
+  max-width: 660px;
 }
 @media (min-width: 760px) {
   .text-col {
-    max-width: var(--text-col-lg);
+    max-width: 720px;
   }
 }
 
