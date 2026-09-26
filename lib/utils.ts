@@ -1,5 +1,71 @@
 /* Presentation-level shared constants + tiny pure helpers (no React). */
 
+import {
+  Package,
+  Users,
+  Target,
+  TrendingUp,
+  Sparkles,
+  Cpu,
+  HeartHandshake,
+  Megaphone,
+  Clapperboard,
+  Code2,
+  Palette,
+  FolderCheck,
+  Smile,
+  Eye,
+  Repeat,
+  Sprout,
+  Video,
+  HeartPulse,
+  Stethoscope,
+  ShoppingCart,
+  Building2,
+  GraduationCap,
+  Plane,
+  Newspaper,
+  Search,
+  PenTool,
+  Rocket,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+/** Typed registry resolving the icon-name strings in lib/data/* to lucide components. */
+export const ICONS = {
+  Package,
+  Users,
+  Target,
+  TrendingUp,
+  Sparkles,
+  Cpu,
+  HeartHandshake,
+  Megaphone,
+  Clapperboard,
+  Code2,
+  Palette,
+  FolderCheck,
+  Smile,
+  Eye,
+  Repeat,
+  Sprout,
+  Video,
+  HeartPulse,
+  Stethoscope,
+  ShoppingCart,
+  Building2,
+  GraduationCap,
+  Plane,
+  Newspaper,
+  Search,
+  PenTool,
+  Rocket,
+} as const;
+
+export type IconName = keyof typeof ICONS;
+
+export const toIcon = (name: IconName): LucideIcon => ICONS[name];
+
 export const CHIP_TONES = [
   "bg-chip-1",
   "bg-chip-2",
