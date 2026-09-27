@@ -1,13 +1,16 @@
 import Link from "next/link";
 
 type Props = {
-  href: string;
+  /** When omitted, renders a native <button> (type/disabled props apply). */
+  href?: string;
   children: React.ReactNode;
   variant?: "primary" | "ghost" | "ghostDark" | "pill" | "onGradient" | "ghostOnGradient";
   /** External URL: renders <a target="_blank" rel="noreferrer"> instead of next/link. */
   external?: boolean;
   className?: string;
   onClick?: () => void;
+  type?: "submit" | "button";
+  disabled?: boolean;
 };
 
 export function Button({
@@ -17,6 +20,8 @@ export function Button({
   external = false,
   className = "",
   onClick,
+  type = "button",
+  disabled = false,
 }: Props) {
   const base =
     "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-btn px-6 py-[13px] font-body text-btn font-semibold transition-transform duration-200 hover:-translate-y-0.5 nav:text-btn-lg";
@@ -34,6 +39,13 @@ export function Button({
       <a href={href} onClick={onClick} target="_blank" rel="noreferrer" className={classes}>
         {children}
       </a>
+    );
+  }
+  if (!href) {
+    return (
+      <button type={type} disabled={disabled} onClick={onClick} className={classes}>
+        {children}
+      </button>
     );
   }
   return (
