@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Clapperboard, Code2, TrendingUp } from "lucide-react";
 import { formatDate, chipTone } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
@@ -31,12 +30,10 @@ export function BlogPostCard({ post, i, href }: { post: Post; i: number; href: s
       </div>
       <h3 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{post.title}</h3>
       <p className="text-small-lg text-text-muted nav:text-base mt-2 flex-1">{post.excerpt}</p>
-      <Link
-        href={href}
-        className="text-small-lg text-action mt-4 inline-flex items-center gap-1 font-semibold hover:underline"
-      >
+      {/* Whole card is the link — a nested <a> here breaks hydration (React #418). */}
+      <span className="text-small-lg text-action mt-4 inline-flex items-center gap-1 font-semibold group-hover:underline">
         Read more <span aria-hidden>→</span>
-      </Link>
+      </span>
     </Card>
   );
 }
