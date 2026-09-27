@@ -13,7 +13,9 @@ type Props = {
 };
 
 export function Card({ children, href, reveal = false, dark = false, className = "" }: Props) {
-  const classes = `group rounded-card border border-border-default bg-surface-card p-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover ${className}`;
+  const classes = `group rounded-card border border-border-default bg-surface-card p-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover ${
+    dark ? "text-text-primary" : ""
+  } ${className}`;
   const scheme = dark ? "dark" : undefined;
   if (href) {
     return (

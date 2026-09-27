@@ -31,6 +31,14 @@ CURRENT SPRINT: 2
 | S2.4 | ✅ | 2026-09-26 | IndustriesGrid, WhyWorkWithUs, ClosingCta `variant="dark"`; Eyebrow gained `tone="gold"`; CTA copy centralized as SERVICES_CTA |
 | S2.5 | ✅ | 2026-09-26 | lib/data/products.ts verbatim; CONTENT-TODO + external URLs + team names |
 | S2.6 | ✅ | 2026-09-26 | Radix Tabs automatic activation; keyboard + ?product=physio + invalid-param fallback verified live (active pill #0D7F76); Button `external` prop; pnpm-workspace allowBuilds placeholder fixed |
+| S2.7 | ✅ | 2026-09-26 | ProductMockup browser/feed/phone, pure CSS aria-hidden; replaced S2.6 placeholder via MOCKUPS map |
+| S2.8 | ✅ | 2026-09-26 | Spotlight dark band, Physio@Home casing exact |
+| S2.9 | ✅ | 2026-09-26 | lib/data/about.ts verbatim (ABOUT_CTA gained eyebrow "Join us" from S2.13); ICONS +9 |
+| S2.10 | ✅ | 2026-09-26 | StoryBlock + InfoTiles tone map (teal/navy/gold/white) + MissionVision cards; /about prerenders |
+| S2.11 | ✅ | 2026-09-26 | ValuesGrid, QualityTrust (dark, gold chips), TeamGrid initials via new `initials()` helper |
+| S2.12 | ✅ | 2026-09-26 | Roadmap: alternating timeline, all 4 dots ON the center line ≥760, left line <760 (see decisions) |
+| S2.13 | ✅ | 2026-09-26 | ClosingCta dark on /about (Join us / Want to join our journey?) |
+| S2.14 | ✅ | 2026-09-26 | overflow sweep 375/760/1024/1440 × 3 pages: 0 horizontal scroll; fixed invisible dark-card text + roadmap parity (see decisions) |
 
 ## Blocked
 - none
@@ -61,3 +69,5 @@ CURRENT SPRINT: 2
 - TabbedProducts uses `key={initial}` on Tabs.Root so a same-route `?product=` change remounts with the new default tab (useSearchParams is initial-only per brief).
 - Panel right column has a temporary aria-hidden placeholder (chip bg + translucent icon) until S2.7's ProductMockup replaces it.
 - Products tab CTA uses Button `external` prop (target=_blank rel=noreferrer) since all three hrefs are placeholder "#".
+- **S2.14 fix 1 — dark Card text:** a `data-scheme="dark"` Card inherits body's ink text (custom props resolve at the declaring element; no descendant re-declares `color`), making pricing text invisible. Card's `dark` prop now also sets `text-text-primary` (Section does the same for dark bands).
+- **S2.14 fix 2 — Roadmap parity:** the aria-hidden line span is child 1 of the `<ol>`, so `odd:`/`even:` on the lis is shifted by one; and each dot span is its own `<li>`'s first child (always nth-child odd), so `nav:even:` never matched dots. Replaced variants with conditional classes by map index (same pattern as ServiceCategoryRow). Also: don't mix `nav:left-auto` and `nav:-left-1.5` on one element — among same-variant utilities Tailwind sorts `left-auto` after `-left-1.5`, so auto won; only the left-side dot carries `nav:left-auto` now.
