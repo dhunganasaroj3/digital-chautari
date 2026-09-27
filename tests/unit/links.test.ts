@@ -30,7 +30,7 @@ describe("internal links", () => {
     const hrefs = MODULES.flatMap((module) => collectHrefs(module));
     expect(hrefs.length).toBeGreaterThan(10);
     const dead = hrefs.filter((href) => {
-      const base = href.split("#")[0].replace(/\/$/, "");
+      const base = href.split("#")[0]?.replace(/\/$/, "") ?? "";
       return !SITEMAP_ROUTES.includes(base as (typeof SITEMAP_ROUTES)[number]);
     });
     expect(dead).toEqual([]);
