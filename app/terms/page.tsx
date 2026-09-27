@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/sections/LegalPage";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  openGraph: pageOpenGraph("Terms of Service"),
 };
 
 const PARAGRAPHS = [

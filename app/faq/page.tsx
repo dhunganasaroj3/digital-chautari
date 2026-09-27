@@ -4,10 +4,12 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { FAQS } from "@/lib/data/faq";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "FAQ",
   description: "Answers on services, pricing, response times, and Physio@Home.",
+  openGraph: pageOpenGraph("FAQ"),
 };
 
 export default function FaqPage() {

@@ -6,11 +6,13 @@ import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { WhyWorkWithUs } from "@/components/sections/WhyWorkWithUs";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { CATEGORIES, SERVICES_CTA, SERVICES_HERO } from "@/lib/data/services";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Digital marketing, content creation, and software development — transparent pricing and agile delivery from Kathmandu.",
+  openGraph: pageOpenGraph("Services"),
 };
 
 export default function ServicesPage() {

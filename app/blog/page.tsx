@@ -4,10 +4,12 @@ import { Section } from "@/components/ui/Section";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { BlogPostCard } from "@/components/sections/BlogPostCard";
 import { POSTS } from "@/lib/data/home";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Notes on marketing, content, and engineering from the Digital Chautari team.",
+  openGraph: pageOpenGraph("Blog"),
 };
 
 export default function BlogPage() {

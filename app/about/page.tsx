@@ -8,11 +8,13 @@ import { TeamGrid } from "@/components/sections/TeamGrid";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { ABOUT_CTA, ABOUT_HERO } from "@/lib/data/about";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "The people behind Digital Chautari — our story, values, team, and roadmap from a chautari to a digital powerhouse.",
+  openGraph: pageOpenGraph("About"),
 };
 
 export default function AboutPage() {

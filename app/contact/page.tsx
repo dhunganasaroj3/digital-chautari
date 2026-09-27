@@ -11,10 +11,12 @@ import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { CONTACT_HERO, INFO_CARDS, DIRECT_LINES, RESPONSE_TIMES } from "@/lib/data/contact";
 import { toIcon } from "@/lib/utils";
+import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Start a conversation with Digital Chautari — we reply to email within 24 hours.",
+  openGraph: pageOpenGraph("Contact"),
 };
 
 export default function ContactPage() {
