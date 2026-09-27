@@ -44,6 +44,12 @@ import {
   BadgeCheck,
   ShieldCheck,
   Network,
+  Mail,
+  Phone,
+  Clock,
+  Briefcase,
+  FileText,
+  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -92,6 +98,12 @@ export const ICONS = {
   BadgeCheck,
   ShieldCheck,
   Network,
+  Mail,
+  Phone,
+  Clock,
+  Briefcase,
+  FileText,
+  Zap,
 } as const;
 
 export type IconName = keyof typeof ICONS;
