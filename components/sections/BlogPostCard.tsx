@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { formatDate, chipTone, toIcon } from "@/lib/utils";
+import { Clapperboard, Code2, TrendingUp } from "lucide-react";
+import { formatDate, chipTone } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 
@@ -12,14 +13,11 @@ type Post = {
   excerpt: string;
 };
 
+/** Module level so no component is created during render. */
+const CATEGORY_ICONS = { Content: Clapperboard, Marketing: TrendingUp } as const;
+
 export function BlogPostCard({ post, i, href }: { post: Post; i: number; href: string }) {
-  const Icon = toIcon(
-    post.category === "Content"
-      ? "Clapperboard"
-      : post.category === "Marketing"
-        ? "TrendingUp"
-        : "Code2",
-  );
+  const Icon = CATEGORY_ICONS[post.category as keyof typeof CATEGORY_ICONS] ?? Code2;
   return (
     <Card href={href} reveal className="flex flex-col">
       <div aria-hidden className={`ratio-blog grid place-items-center rounded-lg ${chipTone(i)}`}>
