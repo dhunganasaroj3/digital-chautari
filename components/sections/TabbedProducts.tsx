@@ -4,8 +4,11 @@ import { useSearchParams } from "next/navigation";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { ProductMockup } from "@/components/sections/ProductMockup";
 import { PRODUCTS } from "@/lib/data/products";
-import { chipTone, toIcon } from "@/lib/utils";
+
+/** Decorative preview per venture: dashboard chart / content feed / booking app. */
+const MOCKUPS = { eco: "browser", one: "feed", physio: "phone" } as const;
 
 /** Initial tab deep-links via ?product=<id> (validated against PRODUCTS ids). */
 export function TabbedProducts() {
@@ -30,8 +33,7 @@ export function TabbedProducts() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        {PRODUCTS.map((product, i) => {
-          const Icon = toIcon(product.icon);
+        {PRODUCTS.map((product) => {
           return (
             <Tabs.Content
               key={product.id}
@@ -58,14 +60,7 @@ export function TabbedProducts() {
                   {product.cta.label}
                 </Button>
               </div>
-              <div
-                aria-hidden
-                className="rounded-card border-border-default bg-surface-card border p-4"
-              >
-                <div className={`rounded-chip grid aspect-video place-items-center ${chipTone(i)}`}>
-                  <Icon className="text-action/40 size-16" />
-                </div>
-              </div>
+              <ProductMockup variant={MOCKUPS[product.id]} />
             </Tabs.Content>
           );
         })}
