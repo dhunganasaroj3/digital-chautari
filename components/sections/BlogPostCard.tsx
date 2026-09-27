@@ -44,7 +44,6 @@ export function BlogPostCard({
         {post.title}
       </TitleTag>
       <p className="text-small-lg text-text-muted nav:text-base mt-2 flex-1">{post.excerpt}</p>
-      {/* Whole card is the link — a nested <a> here breaks hydration (React #418). */}
       <span className="text-small-lg text-action mt-4 inline-flex items-center gap-1 font-semibold group-hover:underline">
         Read more <span aria-hidden>→</span>
       </span>

@@ -1,5 +1,3 @@
-/** SEO payloads + per-page OG helper (S3.9/S3.10). URLs are swapped to the real domain in Sprint 4. */
-
 export const ORG_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -12,7 +10,7 @@ export const ORG_JSONLD = {
   sameAs: [] as string[], // ⟨TBC⟩ social profiles
 };
 
-/** Canonical site URL — set NEXT_PUBLIC_SITE_URL in production; localhost fallback for dev. */
+// Reads NEXT_PUBLIC_SITE_URL; localhost fallback covers dev.
 export const siteUrl = () => process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const SITE_JSONLD = {
@@ -22,7 +20,6 @@ export const SITE_JSONLD = {
   url: siteUrl(),
 };
 
-/** Self-contained openGraph object so pages don't rely on deep metadata merging. */
 export function pageOpenGraph(title: string) {
   return {
     type: "website" as const,
@@ -31,7 +28,7 @@ export function pageOpenGraph(title: string) {
   };
 }
 
-/** Every crawlable route; "" is the home page. Swapped domain comes from NEXT_PUBLIC_SITE_URL. */
+// "" is the home route.
 export const SITEMAP_ROUTES = [
   "",
   "/services",

@@ -49,8 +49,7 @@ test.describe("honeypot", () => {
       await page.getByRole("button", { name: "Send", exact: true }).click();
       await expect(page.getByText("reply within 24 hours")).toBeVisible();
     }).toPass({ timeout: 20_000 });
-    // "No email log entry" is a server-side (dev console) assertion — verified
-    // manually while developing; the UI cannot observe the mailer.
+    // The mailer's "logged instead of sent" line is server-side; verified in the dev console.
   });
 });
 
