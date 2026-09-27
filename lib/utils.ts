@@ -35,6 +35,15 @@ import {
   Globe,
   Smartphone,
   Wrench,
+  Calendar,
+  Layers,
+  MapPin,
+  Telescope,
+  Flame,
+  Award,
+  BadgeCheck,
+  ShieldCheck,
+  Network,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -74,6 +83,15 @@ export const ICONS = {
   Globe,
   Smartphone,
   Wrench,
+  Calendar,
+  Layers,
+  MapPin,
+  Telescope,
+  Flame,
+  Award,
+  BadgeCheck,
+  ShieldCheck,
+  Network,
 } as const;
 
 export type IconName = keyof typeof ICONS;
