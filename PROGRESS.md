@@ -53,6 +53,7 @@ CURRENT SPRINT: 4
 | S3.11 | ✅ | 2026-09-27 | sitemap (9 routes) + robots (disallow /dev,/api/) + links unit test (no dead internal links) |
 | S3.12 | ✅ | 2026-09-27 | branded 404 + error boundary with retry |
 | S3.13 | ✅ | 2026-09-28 | build 17 routes static; titles/descriptions verified in HTML; e2e 9/9 vs PROD build (EADDRINUSE lesson); REVIEW-REQUEST-S3.md; CURRENT SPRINT → 4 |
+| S4.1 | ✅ | 2026-09-28 | R-checklist 82/82 ticked at 375+1024 vs prod build (DOM probe + 18 screenshots, docs/execution/shots-s4); 4 fixes: nested-`<a>` hydration, gold dark eyebrows, GSAP hover-lift clearProps, small-text 500 |
 
 ## Blocked
 - none
@@ -102,3 +103,10 @@ CURRENT SPRINT: 4
 - **EADDRINUSE lesson (S3.13):** a soft `kill $(lsof -t -i:3000)` left the old dev server alive; `pnpm start` failed EADDRINUSE while e2e/screenshots silently ran against DEV (spotted: Next dev-overlay badge inside a "production" screenshot). Verify with `ss -tlnp`, `kill -9` explicit PIDs, then re-run against `pnpm start` output.
 - e2e contact tests each spoof a distinct `x-forwarded-for` header so the 5/60s in-memory rate limiter never couples tests.
 - privacy/terms intentionally reuse the layout default description (brief specifies titles only).
+- **`next dev` + `next build` collide on `.next` (S4.1):** running a dev server (port 3001) while building corrupted the Turbopack font module — `Can't resolve '@vercel/turbopack-next/internal/font/google/font'` / "next/font/google queries have exactly one entry". Network was fine; fix = kill dev server, `rm -rf .next`, rebuild. Symptom cousins of the EADDRINUSE lesson: always check what else holds `.next`/:3000 before building or trusting a server.
+- **React #418 hydration (S4.1-fix-1):** BlogPostCard rendered "Read more →" as a `<Link>` INSIDE the whole-card `<Link>` — `<a>` nested in `<a>` is invalid HTML; React logged #418 on `/` and `/blog` (only pages using the card) and silently client-rendered. Caught by the S4.1 console sweep; pages looked fine, which is why S2/S3 e2e (status-only) never saw it. Fix: "Read more" is now a styled `<span>` with `group-hover:underline`.
+- **GSAP reveals block CSS hover lifts (S4.1-fix-3):** after a reveal, GSAP leaves inline `translate: none; rotate: none; scale: none; transform: …` which overrides Tailwind's hover utilities. `clearProps: "transform"` in the onEnter tween removes GSAP's whole transform cluster (verified: inline style reduced to `opacity: 1`).
+- **Tailwind v4 hover lift lives in `translate`, not `transform` (S4.1):** `hover:-translate-y-1` sets the CSS `translate` property; probes must read computed `.translate` (hover shows `0px -4px`), while computed `transform` stays `none`.
+- **Dark eyebrows gold (S4.1-fix-2):** spec R-004/R-036 want gold eyebrows on navy banners; only ClosingCta had `tone="gold"`. `Eyebrow dark` now implies the gold treatment (SectionHeading dark banners + contact callout inherit it).
+- **Small text 500 (S4.1-fix-4):** R-022 wants 12–13px @ 500. Done via `--text-small(--lg)--font-weight: 500` @theme entries; explicit per-element weights still win (Badge keeps 600).
+- **Probe/verification artifacts (S4.1):** (a) `html { scroll-behavior: smooth }` makes scripted `scrollTo` loops starve ScrollTrigger — set `scrollBehavior = "auto"` first or reveals never fire; (b) `innerText` reflects `text-transform: uppercase`, so copy assertions must be case-insensitive; (c) `querySelector("footer")` matches semantic `<footer>` elements inside components (Testimonials attribution) — target the site footer via `footer[data-scheme]` or the last footer.
