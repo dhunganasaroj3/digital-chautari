@@ -27,3 +27,18 @@ export function pageOpenGraph(title: string) {
     images: [`/api/og?title=${encodeURIComponent(title)}`],
   };
 }
+
+/** Every crawlable route; "" is the home page. Swapped domain comes from NEXT_PUBLIC_SITE_URL. */
+export const SITEMAP_ROUTES = [
+  "",
+  "/services",
+  "/products",
+  "/about",
+  "/contact",
+  "/blog",
+  "/faq",
+  "/privacy",
+  "/terms",
+] as const;
+
+export const siteUrl = () => process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
