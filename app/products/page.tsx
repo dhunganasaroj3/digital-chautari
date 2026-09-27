@@ -7,7 +7,8 @@ import { PRODUCTS_HERO } from "@/lib/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: PRODUCTS_HERO.lede,
+  description:
+    "Three ventures, one vision: Eco Creative Marketing Agency, One Content Creation Studio, and Physio@Home.",
 };
 
 export default function ProductsPage() {

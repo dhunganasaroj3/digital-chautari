@@ -9,7 +9,8 @@ import { CATEGORIES, SERVICES_CTA, SERVICES_HERO } from "@/lib/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: SERVICES_HERO.lede,
+  description:
+    "Digital marketing, content creation, and software development — transparent pricing and agile delivery from Kathmandu.",
 };
 
 export default function ServicesPage() {

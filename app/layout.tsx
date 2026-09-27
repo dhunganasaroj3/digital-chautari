@@ -19,12 +19,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: {
-    default: "Digital Chautari — Creative Technology Company",
-    template: "%s — Digital Chautari",
+    default: "Digital Chautari — Creative Technology Company in Kathmandu",
+    template: "%s · Digital Chautari",
   },
   description:
-    "Digital Chautari is a creative technology company in Kathmandu, Nepal — blending digital marketing, content creation, and health-tech software to turn ambitious ideas into measurable impact.",
+    "Digital Chautari is a Kathmandu-based creative technology company blending digital marketing, content creation, and health-tech software.",
+  openGraph: { type: "website", siteName: "Digital Chautari" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

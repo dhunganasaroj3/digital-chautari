@@ -11,7 +11,8 @@ import { ABOUT_CTA, ABOUT_HERO } from "@/lib/data/about";
 
 export const metadata: Metadata = {
   title: "About",
-  description: ABOUT_HERO.lede,
+  description:
+    "The people behind Digital Chautari — our story, values, team, and roadmap from a chautari to a digital powerhouse.",
 };
 
 export default function AboutPage() {
