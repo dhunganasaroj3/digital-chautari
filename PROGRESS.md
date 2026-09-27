@@ -54,6 +54,10 @@ CURRENT SPRINT: 4
 | S3.12 | ✅ | 2026-09-27 | branded 404 + error boundary with retry |
 | S3.13 | ✅ | 2026-09-28 | build 17 routes static; titles/descriptions verified in HTML; e2e 9/9 vs PROD build (EADDRINUSE lesson); REVIEW-REQUEST-S3.md; CURRENT SPRINT → 4 |
 | S4.1 | ✅ | 2026-09-28 | R-checklist 82/82 ticked at 375+1024 vs prod build (DOM probe + 18 screenshots, docs/execution/shots-s4); 4 fixes: nested-`<a>` hydration, gold dark eyebrows, GSAP hover-lift clearProps, small-text 500 |
+| S4.4 | ✅ | 2026-09-28 | all-routes (200 + zero console errors ×9), 3× navigation reveal stability, reduced-motion, 759/760 breakpoint specs; full e2e 31/31 vs PROD build |
+| S4.5 | ✅ | 2026-09-28 | @axe-core/playwright spec; all violations fixed: AA teal info tile + team initials, h1 on blog/faq, h2 contact info cards + blog card titles, sr-only Footer heading; axe 9/9 clean |
+| S4.6 | ✅ | 2026-09-28 | @lhci/cli + lighthouserc.json (0.95/0.95/0.95/1.0 budgets): home desktop = 100/100/100/100 ×3 runs; lhci step added to ci.yml |
+| S4.7 | ✅ | 2026-09-28 | final gates green (lint 0 errors / typecheck / vitest 27 / playwright 31 vs prod / build); hex audit clean outside sanctioned OG+icon; tagged v1.0.0-rc1 |
 
 ## Blocked
 - none
@@ -110,3 +114,5 @@ CURRENT SPRINT: 4
 - **Dark eyebrows gold (S4.1-fix-2):** spec R-004/R-036 want gold eyebrows on navy banners; only ClosingCta had `tone="gold"`. `Eyebrow dark` now implies the gold treatment (SectionHeading dark banners + contact callout inherit it).
 - **Small text 500 (S4.1-fix-4):** R-022 wants 12–13px @ 500. Done via `--text-small(--lg)--font-weight: 500` @theme entries; explicit per-element weights still win (Badge keeps 600).
 - **Probe/verification artifacts (S4.1):** (a) `html { scroll-behavior: smooth }` makes scripted `scrollTo` loops starve ScrollTrigger — set `scrollBehavior = "auto"` first or reveals never fire; (b) `innerText` reflects `text-transform: uppercase`, so copy assertions must be case-insensitive; (c) `querySelector("footer")` matches semantic `<footer>` elements inside components (Testimonials attribution) — target the site footer via `footer[data-scheme]` or the last footer.
+- **Axe fixes (S4.5) chosen inside the token system:** teal info tile → `bg-action` (A-1 surface, white 4.87:1) with full-opacity label; team initials → `text-action-hover` (#0B6F66, ≈5.4:1 on all five pastels); gradient H1 text never flagged (bg-clip-text). Heading-order fixes: blog/faq titles promoted h2→h1 (sizing classes unchanged — visual spec intact); contact info-card titles h3→h2; BlogPostCard gained `titleAs` (blog index h2, home teaser stays h3); SiteFooter carries an sr-only `<h2>Footer</h2>` so footer column h3s stop skipping a level on prose pages.
+- **LHCI on this machine (S4.6):** Chrome needs sandbox flags — the working key is `collect.settings.chromeFlags` (NOT `collect.chromeFlags` / `puppeteerLaunchOptions`, both silently ignored by @lhci/cli 0.15); plus `CHROME_PATH` pointing at Playwright's chromium (no system Chrome). GitHub runners have Chrome + usable sandbox, so the CI step needs none of this. LHCI `startServerCommand` must live in lighthouserc.json when running plain `autorun`.
