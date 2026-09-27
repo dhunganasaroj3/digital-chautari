@@ -115,6 +115,14 @@ export function splitGradient(title: string, gradient: string): [string, string]
   return [title.slice(0, idx), title.slice(idx + gradient.length)];
 }
 
+/** "A. Karki" → "AK" (team avatar initials). */
+export function initials(name: string): string {
+  return name
+    .split(" ")
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
+
 /** "2026-03-12" → "March 12, 2026" (UTC-anchored, so it never shifts a day). */
 export function formatDate(iso: string): string {
   return new Intl.DateTimeFormat("en-US", {

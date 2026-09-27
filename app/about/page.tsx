@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { StoryBlock } from "@/components/sections/StoryBlock";
 import { MissionVision } from "@/components/sections/MissionVision";
+import { ValuesGrid } from "@/components/sections/ValuesGrid";
+import { QualityTrust } from "@/components/sections/QualityTrust";
+import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ABOUT_HERO } from "@/lib/data/about";
 
 export const metadata: Metadata = {
@@ -15,6 +18,9 @@ export default function AboutPage() {
       <Hero {...ABOUT_HERO} />
       <StoryBlock />
       <MissionVision />
+      <ValuesGrid />
+      <QualityTrust />
+      <TeamGrid />
     </>
   );
 }
