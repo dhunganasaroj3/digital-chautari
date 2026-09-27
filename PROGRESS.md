@@ -27,6 +27,10 @@ CURRENT SPRINT: 2
 | S1.20 | ✅ | 2026-09-27 | all gates green; hex audit clean; keyboard/trap/skip-link verified live; REVIEW-REQUEST-S1.md written; CURRENT SPRINT → 2 |
 | S2.1 | ✅ | 2026-09-26 | lib/data/services.ts verbatim; ICONS +7 (Share2, BarChart3, PenLine, Lightbulb, Globe, Smartphone, Wrench) |
 | S2.2 | ✅ | 2026-09-26 | 3 rows with scroll-mt ids, subs ×4 in StaggerGroup mini-cards; rows alternate via conditional nav:order classes; /services prerenders |
+| S2.3 | ✅ | 2026-09-26 | Card gained `dark` prop (data-scheme on card); Professional navy w/ absolute gold Badge; CTA primary on dark tier, ghost on light |
+| S2.4 | ✅ | 2026-09-26 | IndustriesGrid, WhyWorkWithUs, ClosingCta `variant="dark"`; Eyebrow gained `tone="gold"`; CTA copy centralized as SERVICES_CTA |
+| S2.5 | ✅ | 2026-09-26 | lib/data/products.ts verbatim; CONTENT-TODO + external URLs + team names |
+| S2.6 | ✅ | 2026-09-26 | Radix Tabs automatic activation; keyboard + ?product=physio + invalid-param fallback verified live (active pill #0D7F76); Button `external` prop; pnpm-workspace allowBuilds placeholder fixed |
 
 ## Blocked
 - none
@@ -52,3 +56,8 @@ CURRENT SPRINT: 2
 - Vitest: `globals: true` (RTL auto-cleanup) + jsdom `matchMedia` polyfill in tests/setup.ts (GSAP ScrollTrigger needs it at registration).
 - Home screenshots are viewport-sized: the in-app browser's fullPage capture repeats tiles (stitcher quirk); styleguide shot uses a 0.58 body zoom to fit one capture.
 - Reduced-motion: verified at code level (GSAP matchMedia gate + CSS kill-switch); Playwright `emulateMedia` test is specified for Sprint 4.
+- **pnpm-workspace.yaml repair (S2.6):** create-next-app's template left `simple-git-hooks: set this to true or false` under `allowBuilds`; pnpm 12 hard-fails (ERR_PNPM_IGNORED_BUILDS) once a rebuild is required. Set to `false` (hooks installed via explicit `pnpm exec simple-git-hooks`, consistent with S1).
+- An interrupted `pnpm add` can leave zero-byte files inside `node_modules/.pnpm/<pkg>` extractions (hit react-tabs + react-primitive). Plain `pnpm install` won't repair ("Already up to date"); fix is `rm -rf node_modules/.pnpm/<pkg>+* node_modules/<pkg> && pnpm install --force`.
+- TabbedProducts uses `key={initial}` on Tabs.Root so a same-route `?product=` change remounts with the new default tab (useSearchParams is initial-only per brief).
+- Panel right column has a temporary aria-hidden placeholder (chip bg + translucent icon) until S2.7's ProductMockup replaces it.
+- Products tab CTA uses Button `external` prop (target=_blank rel=noreferrer) since all three hrefs are placeholder "#".

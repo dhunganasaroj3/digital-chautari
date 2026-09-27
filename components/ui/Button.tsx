@@ -4,11 +4,20 @@ type Props = {
   href: string;
   children: React.ReactNode;
   variant?: "primary" | "ghost" | "ghostDark" | "pill" | "onGradient" | "ghostOnGradient";
+  /** External URL: renders <a target="_blank" rel="noreferrer"> instead of next/link. */
+  external?: boolean;
   className?: string;
   onClick?: () => void;
 };
 
-export function Button({ href, children, variant = "primary", className = "", onClick }: Props) {
+export function Button({
+  href,
+  children,
+  variant = "primary",
+  external = false,
+  className = "",
+  onClick,
+}: Props) {
   const base =
     "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-btn px-6 py-[13px] font-body text-btn font-semibold transition-transform duration-200 hover:-translate-y-0.5 nav:text-btn-lg";
   const variants = {
@@ -19,8 +28,16 @@ export function Button({ href, children, variant = "primary", className = "", on
     onGradient: "bg-white text-action-hover hover:bg-white/90",
     ghostOnGradient: "border border-white/40 bg-transparent text-white hover:bg-white/10",
   } as const;
+  const classes = `${base} ${variants[variant]} ${className}`;
+  if (external) {
+    return (
+      <a href={href} onClick={onClick} target="_blank" rel="noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
   return (
-    <Link href={href} onClick={onClick} className={`${base} ${variants[variant]} ${className}`}>
+    <Link href={href} onClick={onClick} className={classes}>
       {children}
     </Link>
   );
