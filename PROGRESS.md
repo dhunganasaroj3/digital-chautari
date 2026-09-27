@@ -1,5 +1,5 @@
 # PROGRESS
-CURRENT SPRINT: 2
+CURRENT SPRINT: 3
 
 ## Status
 | Task | Status | Finished | Notes |
@@ -39,6 +39,7 @@ CURRENT SPRINT: 2
 | S2.12 | ✅ | 2026-09-26 | Roadmap: alternating timeline, all 4 dots ON the center line ≥760, left line <760 (see decisions) |
 | S2.13 | ✅ | 2026-09-26 | ClosingCta dark on /about (Join us / Want to join our journey?) |
 | S2.14 | ✅ | 2026-09-26 | overflow sweep 375/760/1024/1440 × 3 pages: 0 horizontal scroll; fixed invisible dark-card text + roadmap parity (see decisions) |
+| S2.15 | ✅ | 2026-09-26 | data-integrity unit tests (15/15) + Playwright e2e (tabs keyboard/deep-link, nav 200s — /contact fixme for S3); REVIEW-REQUEST-S2.md written; CURRENT SPRINT → 3 |
 
 ## Blocked
 - none
@@ -71,3 +72,6 @@ CURRENT SPRINT: 2
 - Products tab CTA uses Button `external` prop (target=_blank rel=noreferrer) since all three hrefs are placeholder "#".
 - **S2.14 fix 1 — dark Card text:** a `data-scheme="dark"` Card inherits body's ink text (custom props resolve at the declaring element; no descendant re-declares `color`), making pricing text invisible. Card's `dark` prop now also sets `text-text-primary` (Section does the same for dark bands).
 - **S2.14 fix 2 — Roadmap parity:** the aria-hidden line span is child 1 of the `<ol>`, so `odd:`/`even:` on the lis is shifted by one; and each dot span is its own `<li>`'s first child (always nth-child odd), so `nav:even:` never matched dots. Replaced variants with conditional classes by map index (same pattern as ServiceCategoryRow). Also: don't mix `nav:left-auto` and `nav:-left-1.5` on one element — among same-variant utilities Tailwind sorts `left-auto` after `-left-1.5`, so auto won; only the left-side dot carries `nav:left-auto` now.
+- S2.15: Playwright chromium installed WITHOUT `--with-deps` (sudo unavailable); system libs were sufficient. `tests/e2e/**` excluded from Vitest (its default glob would pick up `*.spec.ts`).
+- S2.15: `/contact` is Sprint 3 — the 5th nav link is asserted in a `test.fixme` with a TODO(S3) so `playwright test` stays green at S2; unskip when the contact page exists.
+- Playwright `webServer.reuseExistingServer: true` per brief — the long-running dev server is reused; a cold `pnpm dev` start also works.
