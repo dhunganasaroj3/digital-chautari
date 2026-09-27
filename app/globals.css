@@ -77,8 +77,10 @@
   --text-lede-lg--line-height: 1.6; /* 17px */
   --text-small: 0.75rem;
   --text-small--line-height: 1.5; /* 12px */
+  --text-small--font-weight: 500; /* spec R-022: small 12–13px @ 500 */
   --text-small-lg: 0.8125rem;
   --text-small-lg--line-height: 1.5; /* 13px */
+  --text-small-lg--font-weight: 500;
   --text-btn: 0.875rem;
   --text-btn--line-height: 1; /* 14px */
   --text-btn-lg: 0.9375rem;
