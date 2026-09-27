@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digital Chautari
 
-## Getting Started
+Marketing website for **Digital Chautari** — a Kathmandu-based creative technology company
+blending digital marketing, content creation, and health-tech software (Physio@Home).
 
-First, run the development server:
+Five public pages (Home, Services, Products, About, Contact) plus FAQ, Blog, Privacy,
+Terms — built to the approved design spec: Sora/Inter type ramp, teal/gold/leaf token
+palette on paper, navy dark bands, GSAP scroll reveals with a full reduced-motion kill
+switch, and a spam-hardened contact form (zod + rate limit + honeypot).
+
+## Stack
+
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript (strict + noUncheckedIndexedAccess) ·
+Tailwind CSS 4 (CSS-first `@theme` tokens) · GSAP + @gsap/react · react-hook-form + zod ·
+Resend (optional — see env vars) · Vitest + Testing Library · Playwright · axe-core · Lighthouse CI
+
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm dev        # dev server on :3000 (styleguide at /dev, noindex)
+pnpm build      # production build
+pnpm start      # serve the production build
+pnpm lint       # eslint
+pnpm typecheck  # tsc --noEmit
+pnpm test       # vitest (unit)
+pnpm exec playwright test   # e2e — prefers the running :3000 server; reuseExistingServer is on
+pnpm exec lhci autorun      # Lighthouse budgets (lighthouserc.json)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+E2e quality bar: every route must answer 200 with **zero console errors**, reveals must
+survive repeated navigation, and the axe scan must report **zero violations**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env` for local overrides. All are optional locally:
 
-## Learn More
+| Variable | Used for | Without it |
+|---|---|---|
+| `CONTACT_TO_EMAIL` | contact-form submissions recipient | mailer logs to console |
+| `RESEND_API_KEY` | sending the contact email via Resend | mailer logs to console |
+| `NEXT_PUBLIC_SITE_URL` | canonical URL for sitemap/robots/OG/JSON-LD | `http://localhost:3000` |
 
-To learn more about Next.js, take a look at the following resources:
+## Project layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — routes (all prerendered), `/api/og` ImageResponse, sitemap/robots
+- `components/` — `ui/` primitives, `layout/`, `sections/` (presentation only)
+- `lib/data/` — all page copy, verbatim from the approved content
+- `lib/core/` — pure contact-form logic (validation, rate limit, mailer); no React
+- `hooks/` — client orchestration (`useContactForm`)
+- `app/globals.css` — the three-layer token system; hex literals live nowhere else
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content placeholders
 
-## Deploy on Vercel
+Copy that still needs real client input is tracked in [CONTENT-TODO.md](CONTENT-TODO.md)
+(all are data-file edits — no code changes required).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Docs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Design/implementation plan: `docs/plans/`
+- Execution playbook + sprint briefs: `docs/execution/` (EXECUTION.md, SPRINT-1..4.md,
+  PROGRESS.md, CHECKLIST-R.md, REVIEW-REQUEST-S*.md)
+- **Deploying:** see [docs/execution/DEPLOY-RUNBOOK.md](docs/execution/DEPLOY-RUNBOOK.md)
+  — deployment is performed by the site owner, not by tooling.
