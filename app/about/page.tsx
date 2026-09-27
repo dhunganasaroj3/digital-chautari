@@ -5,6 +5,7 @@ import { MissionVision } from "@/components/sections/MissionVision";
 import { ValuesGrid } from "@/components/sections/ValuesGrid";
 import { QualityTrust } from "@/components/sections/QualityTrust";
 import { TeamGrid } from "@/components/sections/TeamGrid";
+import { Roadmap } from "@/components/sections/Roadmap";
 import { ABOUT_HERO } from "@/lib/data/about";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function AboutPage() {
       <ValuesGrid />
       <QualityTrust />
       <TeamGrid />
+      <Roadmap />
     </>
   );
 }
