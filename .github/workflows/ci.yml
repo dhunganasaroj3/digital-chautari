@@ -12,3 +12,4 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm build
+      - run: pnpm exec lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand="pnpm start"
