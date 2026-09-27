@@ -6,7 +6,8 @@ import { ValuesGrid } from "@/components/sections/ValuesGrid";
 import { QualityTrust } from "@/components/sections/QualityTrust";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { Roadmap } from "@/components/sections/Roadmap";
-import { ABOUT_HERO } from "@/lib/data/about";
+import { ClosingCta } from "@/components/sections/ClosingCta";
+import { ABOUT_CTA, ABOUT_HERO } from "@/lib/data/about";
 
 export const metadata: Metadata = {
   title: "About",
@@ -23,6 +24,7 @@ export default function AboutPage() {
       <QualityTrust />
       <TeamGrid />
       <Roadmap />
+      <ClosingCta variant="dark" {...ABOUT_CTA} />
     </>
   );
 }
