@@ -63,6 +63,7 @@ CURRENT SPRINT: DONE (all 4 sprints complete — v1.0.0-rc1 handoff; deployment 
 | S4.R1 | ✅ | 2026-09-28 | user feedback: GradientText inline style → `gradient-text`/`gradient-text-dark` utilities (OG route + /dev swatches keep theirs — satori has no CSS cascade; styleguide shows tokens by var name) |
 | S4.R2 | ✅ | 2026-09-28 | user feedback: pruned reviewer-facing comments (fix-history narration, sprint-number citations); kept constraint comments (a11y reasons, nth-child parity, rate-limit caveat) |
 | S4.R3 | ✅ | 2026-09-28 | user feedback: rewrote AI-flavored marketing copy across lib/data + page metadata (kept prices/roles/stats/emails; spotlight retitled away from "healthcare reimagined" — supersedes R-066's exact-string tick) |
+| S4.R4 | ✅ | 2026-09-28 | user feedback: dropped decorative emoji (🚀 hero eyebrow — supersedes R-043's exact string; ✅ form success message). Arrows "→" and stat "4.9★" kept (spec copy / data glyph) |
 
 ## Blocked
 - none

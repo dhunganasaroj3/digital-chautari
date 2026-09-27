@@ -1,5 +1,5 @@
 export const HERO = {
-  eyebrow: "🚀 Welcome to Digital Chautari",
+  eyebrow: "Welcome to Digital Chautari",
   title: "We build digital bridges between ideas and impact",
   gradient: "digital bridges",
   lede: "Digital Chautari is a Kathmandu company doing digital marketing, content creation, and health-tech software under one roof. We run three of our own products and bring that experience to client projects.",

@@ -147,7 +147,7 @@ export function ContactForm() {
       <div aria-live="polite" className="mt-4">
         {result?.ok ? (
           <p className="text-small-lg text-action font-semibold">
-            ✅ Thanks — we&apos;ll reply within 24 hours.
+            Thanks — we&apos;ll reply within 24 hours.
           </p>
         ) : null}
         {formError ? (
