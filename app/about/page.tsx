@@ -12,8 +12,7 @@ import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "The people behind Digital Chautari — our story, values, team, and roadmap from a chautari to a digital powerhouse.",
+  description: "The people behind Digital Chautari: our story, values, team, and roadmap.",
   openGraph: pageOpenGraph("About"),
 };
 

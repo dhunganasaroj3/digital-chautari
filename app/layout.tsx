@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Digital Chautari",
   },
   description:
-    "Digital Chautari is a Kathmandu-based creative technology company blending digital marketing, content creation, and health-tech software.",
+    "Digital Chautari is a Kathmandu company doing digital marketing, content creation, and health-tech software.",
   openGraph: { type: "website", siteName: "Digital Chautari" },
 };
 

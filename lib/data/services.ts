@@ -2,7 +2,7 @@ export const SERVICES_HERO = {
   eyebrow: "Our Services",
   title: "Services that drive growth",
   gradient: "drive growth",
-  lede: "Three practices, one team — strategy, creativity, and engineering priced transparently and delivered in agile sprints.",
+  lede: "One team for strategy, creative, and engineering. Prices are on this page, and work runs in short sprints you can follow.",
 } as const;
 
 export const CATEGORIES = [
@@ -10,7 +10,7 @@ export const CATEGORIES = [
     id: "digital-marketing",
     icon: "Megaphone",
     title: "Digital Marketing",
-    body: "Data-driven campaigns that put your brand in front of the right people and turn attention into revenue.",
+    body: "Campaigns built on your numbers and reported plainly: who saw, who clicked, who bought.",
     subs: [
       { icon: "Search", title: "SEO & SEM" },
       { icon: "Share2", title: "Social Media Marketing" },
@@ -22,7 +22,7 @@ export const CATEGORIES = [
     id: "content-creation",
     icon: "Clapperboard",
     title: "Content Creation",
-    body: "Stories that stick — planned, produced, and measured by one studio team.",
+    body: "Planned, produced, and measured by one studio team that works to a calendar, not to inspiration.",
     subs: [
       { icon: "Video", title: "Video Production" },
       { icon: "PenLine", title: "Copywriting & Blogs" },

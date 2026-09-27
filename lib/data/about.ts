@@ -2,15 +2,15 @@ export const ABOUT_HERO = {
   eyebrow: "About Us",
   title: "The people behind Digital Chautari",
   gradient: "people behind",
-  lede: "A chautari built by marketers, creators, and engineers — headquartered in Kathmandu, shipping everywhere.",
+  lede: "Marketers, creators, and engineers, headquartered in Kathmandu and working with clients anywhere.",
 } as const;
 
 export const STORY = {
   eyebrow: "Our story",
-  title: "From a chautari to a digital powerhouse",
+  title: "From a platform under a tree",
   paragraphs: [
-    "Every chautari starts the same way: a tree, a platform, and people who gather. Ours started in 2025 with three founders, a shared desk in Kathmandu, and a conviction that Nepali ideas deserve world-class execution.",
-    "Today Digital Chautari runs three ventures and a client services studio — marketers, creators, and engineers who practice on their own products before recommending anything to yours.",
+    "Every chautari starts the same way: a tree, a platform, and the people who gather there. Ours started in 2025 with three founders and a shared desk in Kathmandu, on one belief: work made in Nepal should hold up anywhere.",
+    "Today we run three ventures alongside the client studio. The people advising you ship their own products every week.",
   ],
   tiles: [
     { icon: "Calendar", value: "2025", label: "Founded", tone: "teal" },
@@ -24,12 +24,12 @@ export const MISSION_VISION = {
   mission: {
     icon: "Target",
     title: "Our Mission",
-    body: "To make world-class digital expertise accessible to Nepali businesses — and take Nepali products to the world.",
+    body: "Make world-class digital work affordable for Nepali businesses, and take Nepali products to the world.",
   },
   vision: {
     icon: "Telescope",
     title: "Our Vision",
-    body: "A chautari in every corner of the digital world: the most trusted creative-technology partner in Nepal.",
+    body: "To be the creative-technology partner Nepal's businesses trust first.",
   },
 } as const;
 
@@ -52,7 +52,7 @@ export const VALUES = [
   {
     icon: "Users",
     title: "Collaboration",
-    body: "One team, your team — from kickoff to after launch.",
+    body: "We work as one team with yours, from kickoff to well after launch.",
   },
 ] as const;
 
@@ -68,17 +68,17 @@ export const QUALITY = {
     {
       icon: "ShieldCheck",
       title: "Data Protection",
-      body: "Privacy-by-default practices in everything we build and run.",
+      body: "Privacy is the default in everything we build and run.",
     },
     {
       icon: "Globe",
       title: "Global Delivery",
-      body: "Remote-first workflows trusted by clients across time zones.",
+      body: "Remote-first workflows, with clients across several time zones.",
     },
     {
       icon: "Network",
       title: "Pan-Nepal Network",
-      body: "From Kathmandu to provinces — talent and reach nationwide.",
+      body: "Team and reach across the provinces, not just the capital.",
     },
   ],
 } as const;

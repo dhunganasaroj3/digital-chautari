@@ -10,7 +10,7 @@ export const SITE = {
   ],
   footer: {
     blurb:
-      "A creative technology company in Kathmandu — building digital bridges between ideas and impact.",
+      "Marketing, content, and software from Kathmandu. We build our own products and take on client work.",
     company: [
       { label: "About Us", href: "/about" },
       { label: "Products", href: "/products" },

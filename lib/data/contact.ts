@@ -2,7 +2,7 @@ export const CONTACT_HERO = {
   eyebrow: "Contact",
   title: "Let's start a conversation",
   gradient: "conversation",
-  lede: "Tell us where you're headed — we'll help you build the bridge.",
+  lede: "Tell us what you're planning. You'll get an honest reply with clear next steps.",
 } as const;
 
 export const INFO_CARDS = [

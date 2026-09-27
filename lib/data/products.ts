@@ -2,7 +2,7 @@ export const PRODUCTS_HERO = {
   eyebrow: "Our Products",
   title: "Three ventures, one vision",
   gradient: "one vision",
-  lede: "We build our own products so the work we do for you is practiced, not theoretical.",
+  lede: "We run our own products in the market, so client work runs on first-hand experience.",
 } as const;
 
 export const PRODUCTS = [
@@ -12,7 +12,7 @@ export const PRODUCTS = [
     category: "Marketing Agency",
     icon: "Sprout",
     name: "Eco Creative Marketing Agency",
-    body: "Performance-first digital marketing for purpose-led brands: SEO, social, and campaigns that compound.",
+    body: "SEO, social, and paid campaigns for brands that care about more than clicks.",
     stats: [
       { value: "40+", label: "Clients" },
       { value: "250+", label: "Campaigns" },
@@ -27,7 +27,7 @@ export const PRODUCTS = [
     category: "Content Studio",
     icon: "Video",
     name: "One Content Creation Studio",
-    body: "A studio for scroll-stopping content — strategy, video, design, and copy produced under one roof.",
+    body: "Strategy, video, design, and copy from one studio team that plans and measures together.",
     stats: [
       { value: "1M+", label: "Views" },
       { value: "120+", label: "Videos" },
@@ -55,7 +55,7 @@ export const PRODUCTS = [
 
 export const PHYSIO_SPOTLIGHT = {
   eyebrow: "Spotlight",
-  title: "Physio@Home — healthcare reimagined",
-  body: "Certified physiotherapy delivered at home — booking, scheduling, and progress tracking in one app.",
+  title: "Physio@Home: care that comes to you",
+  body: "Certified physiotherapists visit you at home. Booking, scheduling, and progress tracking live in one app.",
   cta: { label: "Get in Touch →", href: "/contact" },
 } as const;

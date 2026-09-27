@@ -13,7 +13,7 @@ export function MapPlaceholder() {
           <MapPin className="text-action size-8" />
         </div>
       </div>
-      <p className="text-small text-text-muted mt-3">Kathmandu, Nepal — map coming soon</p>
+      <p className="text-small text-text-muted mt-3">Kathmandu, Nepal · map coming soon</p>
     </Card>
   );
 }

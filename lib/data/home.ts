@@ -2,7 +2,7 @@ export const HERO = {
   eyebrow: "🚀 Welcome to Digital Chautari",
   title: "We build digital bridges between ideas and impact",
   gradient: "digital bridges",
-  lede: "Digital Chautari is a creative technology company in Kathmandu, Nepal — blending digital marketing, content creation, and health-tech software to turn ambitious ideas into measurable impact.",
+  lede: "Digital Chautari is a Kathmandu company doing digital marketing, content creation, and health-tech software under one roof. We run three of our own products and bring that experience to client projects.",
   primaryCta: { label: "Explore Services →", href: "/services" },
   ghostCta: { label: "View Products", href: "/products" },
   stats: [
@@ -16,30 +16,30 @@ export const FEATURES = [
   {
     icon: "TrendingUp",
     title: "Growth-Driven",
-    body: "Every decision is measured against real business outcomes — traffic, leads, revenue.",
+    body: "We report on traffic, leads, and revenue, and we adjust course when the numbers say so.",
   },
   {
     icon: "Sparkles",
     title: "Creative-First",
-    body: "Design and storytelling lead, so your brand sounds as good as it performs.",
+    body: "Design and writing come first, so the brand holds up on every channel.",
   },
   {
     icon: "Cpu",
     title: "Tech-Powered",
-    body: "Modern engineering and automation underpin everything we ship.",
+    body: "We build on modern tools and automate whatever shouldn't be manual.",
   },
   {
     icon: "HeartHandshake",
     title: "Client-Centric",
-    body: "Collaborative process, transparent pricing, and support after launch.",
+    body: "Clear pricing, a named team, and support that doesn't stop at launch.",
   },
 ] as const;
 
 export const WHO_WE_ARE = {
   title: "A Chautari where ideas meet execution",
   paragraphs: [
-    "In Nepal, a chautari is a shady platform where travelers rest, share stories, and continue wiser. Digital Chautari is that gathering point for the digital age — marketers, creators, and engineers helping ambitious ideas find their footing.",
-    "Founded in Kathmandu in 2025, we run three ventures of our own while partnering with clients across healthcare, commerce, and media — so the advice we give you is practiced, not theoretical.",
+    "In Nepal, a chautari is a shady platform built under a tree, where travelers rest and trade news before moving on. Digital Chautari is our version of one: marketers, creators, and engineers sharing a table in Kathmandu.",
+    "Founded in 2025, we run three ventures of our own while working with clients in healthcare, commerce, and media. What we recommend to you is usually something we already ship ourselves.",
   ],
   checklist: [
     "Creative Strategy",
@@ -70,14 +70,14 @@ export const PRODUCTS_TEASER = {
       icon: "Sprout",
       category: "Marketing Agency",
       name: "Eco Creative Marketing Agency",
-      body: "Performance-first digital marketing for purpose-led brands: SEO, social, and campaigns that compound.",
+      body: "SEO, social, and paid campaigns for brands that care about more than clicks.",
       href: "/products",
     },
     {
       icon: "Video",
       category: "Content Studio",
       name: "One Content Creation Studio",
-      body: "A studio for scroll-stopping content — strategy, video, design, and copy produced under one roof.",
+      body: "Strategy, video, design, and copy from one studio team that plans and measures together.",
       href: "/products",
     },
     {
@@ -94,12 +94,12 @@ export const SECTORS = [
   {
     icon: "Stethoscope",
     title: "Healthcare",
-    body: "Patient-first digital experiences, from clinic sites to health-tech platforms.",
+    body: "Clinic sites and health platforms, built around how patients actually behave.",
   },
   {
     icon: "ShoppingCart",
     title: "E-Commerce",
-    body: "Storefronts and campaigns built to convert browsers into repeat buyers.",
+    body: "Storefronts and campaigns that bring customers back, not just in once.",
   },
   {
     icon: "Building2",
@@ -114,12 +114,12 @@ export const SECTORS = [
   {
     icon: "Plane",
     title: "Tourism & Hospitality",
-    body: "Destination storytelling that puts Nepal on every itinerary.",
+    body: "Stories and bookings that put Nepal on travelers' shortlists.",
   },
   {
     icon: "Newspaper",
     title: "Media & Publishing",
-    body: "Content engines and products for modern newsrooms and creators.",
+    body: "Publishing tools and content workflows for newsrooms and creators.",
   },
 ] as const;
 
@@ -129,7 +129,7 @@ export const PROCESS = {
     {
       icon: "Search",
       title: "Discover",
-      body: "We dig into your goals, market, and users before a single pixel.",
+      body: "We start with your goals, your market, and the people you serve.",
     },
     {
       icon: "PenTool",
@@ -147,20 +147,18 @@ export const PROCESS = {
 
 export const TESTIMONIALS = [
   {
-    quote:
-      "Digital Chautari turned our scattered ideas into a brand system and a website that finally converts.",
+    quote: "They turned a pile of half-finished ideas into a site we're proud to send people to.",
     name: "Aarya Shrestha",
     role: "Founder, Himalaya Organics",
   },
   {
     quote:
-      "Their content studio doubled our engagement in three months without us lifting a finger.",
+      "Engagement doubled in three months after their studio took over our social. We just approve.",
     name: "Bibek Thapa",
     role: "Marketing Head, Everest Eats",
   },
   {
-    quote:
-      "Physio@Home is the rare health-tech product that feels effortless for both patients and therapists.",
+    quote: "Even my least tech-savvy patients book and track their sessions without calling me.",
     name: "Dr. Sunita Maharjan",
     role: "Physiotherapist",
   },
@@ -183,7 +181,7 @@ export const POSTS = [
     date: "2026-02-28",
     readTime: "7 min read",
     excerpt:
-      "AI overviews, zero-click results, and E-E-A-T: the tactics that survived the last two years of search upheaval — and the ones to drop.",
+      "What still works after two years of AI overviews and zero-click searches, and what we've stopped doing.",
   },
   {
     slug: "building-physiohome",

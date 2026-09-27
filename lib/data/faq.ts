@@ -1,7 +1,7 @@
 export const FAQS = [
   {
     q: "What services does Digital Chautari offer?",
-    a: "Three practices — digital marketing, content creation, and software development — delivered by one integrated team. See Services for the full breakdown.",
+    a: "Digital marketing, content creation, and software development, all in-house. See Services for the full breakdown.",
   },
   {
     q: "How does pricing work?",
@@ -13,7 +13,7 @@ export const FAQS = [
   },
   {
     q: "Do you work with clients outside Kathmandu?",
-    a: "Yes — we're remote-first with a pan-Nepal network and clients across time zones.",
+    a: "Yes. We're remote-first, with a network across Nepal and clients in several time zones.",
   },
   {
     q: "What is Physio@Home?",

@@ -3,7 +3,7 @@ export const ORG_JSONLD = {
   "@type": "Organization",
   name: "Digital Chautari",
   description:
-    "Creative technology company in Kathmandu, Nepal — digital marketing, content creation, and health-tech software.",
+    "Digital marketing, content creation, and health-tech software from Kathmandu, Nepal.",
   address: { "@type": "PostalAddress", addressLocality: "Kathmandu", addressCountry: "NP" },
   foundingDate: "2025",
   email: "hello@digitalchautari.com.np",

@@ -11,7 +11,7 @@ import { pageOpenGraph } from "@/lib/data/seo";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Digital marketing, content creation, and software development — transparent pricing and agile delivery from Kathmandu.",
+    "Digital marketing, content creation, and software development, with pricing on the page and delivery in short sprints.",
   openGraph: pageOpenGraph("Services"),
 };
 

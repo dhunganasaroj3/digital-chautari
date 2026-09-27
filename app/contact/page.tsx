@@ -15,7 +15,7 @@ import { pageOpenGraph } from "@/lib/data/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start a conversation with Digital Chautari — we reply to email within 24 hours.",
+  description: "Tell us what you're planning. Digital Chautari replies to email within 24 hours.",
   openGraph: pageOpenGraph("Contact"),
 };
 
