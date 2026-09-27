@@ -30,6 +30,9 @@ export function staggerReveal(scope: HTMLElement) {
           ease: REVEAL.ease,
           stagger: REVEAL.stagger,
           overwrite: true,
+          // Drop the inline transform once revealed — it would otherwise override
+          // the CSS hover:-translate-y-1 lift on cards (computed identity matrix).
+          clearProps: "transform",
         }),
     });
   });
