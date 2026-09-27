@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { ORG_JSONLD, SITE_JSONLD } from "@/lib/data/seo";
 import "./globals.css";
 
 const sora = Sora({
@@ -33,6 +34,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([ORG_JSONLD, SITE_JSONLD]) }}
+        />
         <a
           href="#main"
           className="focus:rounded-btn focus:bg-action focus:text-on-action sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:px-4 focus:py-2"
