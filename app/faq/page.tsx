@@ -20,9 +20,9 @@ export default function FaqPage() {
         <div className="container-dc relative">
           <div className="text-col">
             <Eyebrow>FAQ</Eyebrow>
-            <h2 className="font-heading text-h2 nav:text-h2-lg mt-4 font-extrabold">
+            <h1 className="font-heading text-h2 nav:text-h2-lg mt-4 font-extrabold">
               Frequently asked questions
-            </h2>
+            </h1>
           </div>
         </div>
       </section>

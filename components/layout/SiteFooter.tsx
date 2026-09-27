@@ -30,6 +30,8 @@ export function SiteFooter() {
   return (
     <footer data-scheme="dark" className="section-tight bg-surface text-text-primary">
       <div className="container-dc">
+        {/* Column headings are h3 — give them an h2 parent heading (axe heading-order). */}
+        <h2 className="sr-only">Footer</h2>
         <div className="nav:grid-cols-4 grid grid-cols-2 gap-8">
           <div className="nav:col-span-1 col-span-2">
             <div className="flex items-center gap-3">

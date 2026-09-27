@@ -20,9 +20,9 @@ export default function BlogPage() {
         <div className="container-dc relative">
           <div className="text-col">
             <Eyebrow>Blog</Eyebrow>
-            <h2 className="font-heading text-h2 nav:text-h2-lg mt-4 font-extrabold">
+            <h1 className="font-heading text-h2 nav:text-h2-lg mt-4 font-extrabold">
               Latest from our blog
-            </h2>
+            </h1>
           </div>
         </div>
       </section>
@@ -31,7 +31,7 @@ export default function BlogPage() {
         <div className="container-dc">
           <StaggerGroup className="nav:grid-cols-2 grid grid-cols-1 gap-5 lg:grid-cols-3">
             {POSTS.map((post, i) => (
-              <BlogPostCard key={post.slug} post={post} i={i} href="#" />
+              <BlogPostCard key={post.slug} post={post} i={i} href="#" titleAs="h2" />
             ))}
           </StaggerGroup>
         </div>

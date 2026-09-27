@@ -11,7 +11,7 @@ export function TeamGrid() {
         {TEAM.map((member, i) => (
           <Card key={member.name} reveal>
             <span
-              className={`text-action font-heading grid size-12 place-items-center rounded-full font-bold ${chipTone(i)}`}
+              className={`text-action-hover font-heading grid size-12 place-items-center rounded-full font-bold ${chipTone(i)}`}
             >
               {initials(member.name)}
             </span>

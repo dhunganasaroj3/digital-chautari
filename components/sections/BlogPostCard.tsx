@@ -15,8 +15,20 @@ type Post = {
 /** Module level so no component is created during render. */
 const CATEGORY_ICONS = { Content: Clapperboard, Marketing: TrendingUp } as const;
 
-export function BlogPostCard({ post, i, href }: { post: Post; i: number; href: string }) {
+export function BlogPostCard({
+  post,
+  i,
+  href,
+  /** h3 under a section h2 (home teaser); the blog index promotes titles to h2 (axe heading-order). */
+  titleAs = "h3",
+}: {
+  post: Post;
+  i: number;
+  href: string;
+  titleAs?: "h2" | "h3";
+}) {
   const Icon = CATEGORY_ICONS[post.category as keyof typeof CATEGORY_ICONS] ?? Code2;
+  const TitleTag = titleAs;
   return (
     <Card href={href} reveal className="flex flex-col">
       <div aria-hidden className={`ratio-blog grid place-items-center rounded-lg ${chipTone(i)}`}>
@@ -28,7 +40,9 @@ export function BlogPostCard({ post, i, href }: { post: Post; i: number; href: s
           {formatDate(post.date)} · {post.readTime}
         </span>
       </div>
-      <h3 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{post.title}</h3>
+      <TitleTag className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">
+        {post.title}
+      </TitleTag>
       <p className="text-small-lg text-text-muted nav:text-base mt-2 flex-1">{post.excerpt}</p>
       {/* Whole card is the link — a nested <a> here breaks hydration (React #418). */}
       <span className="text-small-lg text-action mt-4 inline-flex items-center gap-1 font-semibold group-hover:underline">

@@ -36,7 +36,7 @@ export default function ContactPage() {
             return (
               <Card key={info.title} reveal>
                 <IconChip icon={Icon} tone={i} />
-                <h3 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{info.title}</h3>
+                <h2 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{info.title}</h2>
                 <p className="text-small-lg text-text-muted mt-1 break-words">{info.body}</p>
               </Card>
             );
