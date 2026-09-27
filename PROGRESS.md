@@ -60,6 +60,9 @@ CURRENT SPRINT: DONE (all 4 sprints complete — v1.0.0-rc1 handoff; deployment 
 | S4.7 | ✅ | 2026-09-28 | final gates green (lint 0 errors / typecheck / vitest 27 / playwright 31 vs prod / build); hex audit clean outside sanctioned OG+icon; tagged v1.0.0-rc1 |
 | S4.8 | ✅ | 2026-09-28 | .env.example (gitignore exception), security headers in next.config (5 verified via curl), canonical URL env wiring + home og:image, README, DEPLOY-RUNBOOK.md, CONTENT-TODO completed (social profiles + legal review added) |
 | S4.9 | ✅ | 2026-09-28 | REVIEW-REQUEST-S4.md (gate outputs, 18 final screenshots, ⟨TBC⟩ list, runbook link); CURRENT SPRINT: DONE — handoff commit, tag re-pointed to final state; STOP: deployment NOT attempted (owner's manual step) |
+| S4.R1 | ✅ | 2026-09-28 | user feedback: GradientText inline style → `gradient-text`/`gradient-text-dark` utilities (OG route + /dev swatches keep theirs — satori has no CSS cascade; styleguide shows tokens by var name) |
+| S4.R2 | ✅ | 2026-09-28 | user feedback: pruned reviewer-facing comments (fix-history narration, sprint-number citations); kept constraint comments (a11y reasons, nth-child parity, rate-limit caveat) |
+| S4.R3 | ✅ | 2026-09-28 | user feedback: rewrote AI-flavored marketing copy across lib/data + page metadata (kept prices/roles/stats/emails; spotlight retitled away from "healthcare reimagined" — supersedes R-066's exact-string tick) |
 
 ## Blocked
 - none

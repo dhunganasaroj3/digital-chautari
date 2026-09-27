@@ -210,6 +210,25 @@
   background: linear-gradient(135deg, var(--color-dc-teal-500), #2563eb);
 }
 
+/* Gradient headline fills (90deg teal → gold → leaf); the dark variant
+   uses full-strength gold (A-2's #b9821b stop is for light backgrounds) */
+@utility gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-dc-teal-500),
+    var(--color-dc-gold-600),
+    var(--color-dc-leaf-500)
+  );
+}
+@utility gradient-text-dark {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-dc-teal-500),
+    var(--color-dc-gold-500),
+    var(--color-dc-leaf-500)
+  );
+}
+
 /* Page transition — 0.45s fade + 8px rise on every route (killed by reduced-motion) */
 @keyframes page-enter {
   from {
