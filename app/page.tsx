@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { HERO } from "@/lib/data/home";
+import { pageOpenGraph } from "@/lib/data/seo";
 import { toIcon } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { StatBar } from "@/components/ui/StatBar";
@@ -12,6 +14,10 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { BlogTeaser } from "@/components/sections/BlogTeaser";
 import { ClosingCta } from "@/components/sections/ClosingCta";
+
+export const metadata: Metadata = {
+  openGraph: pageOpenGraph("Digital Chautari"),
+};
 
 function HomeHero() {
   const stats = HERO.stats.map((stat) => ({ ...stat, icon: toIcon(stat.icon) }));

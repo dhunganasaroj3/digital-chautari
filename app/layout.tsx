@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { ORG_JSONLD, SITE_JSONLD } from "@/lib/data/seo";
+import { ORG_JSONLD, SITE_JSONLD, siteUrl } from "@/lib/data/seo";
 import "./globals.css";
 
 const sora = Sora({
@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(siteUrl()),
   title: {
     default: "Digital Chautari — Creative Technology Company in Kathmandu",
     template: "%s · Digital Chautari",

@@ -12,11 +12,14 @@ export const ORG_JSONLD = {
   sameAs: [] as string[], // ⟨TBC⟩ social profiles
 };
 
+/** Canonical site URL — set NEXT_PUBLIC_SITE_URL in production; localhost fallback for dev. */
+export const siteUrl = () => process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const SITE_JSONLD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Digital Chautari",
-  url: "http://localhost:3000",
+  url: siteUrl(),
 };
 
 /** Self-contained openGraph object so pages don't rely on deep metadata merging. */
@@ -40,5 +43,3 @@ export const SITEMAP_ROUTES = [
   "/privacy",
   "/terms",
 ] as const;
-
-export const siteUrl = () => process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
