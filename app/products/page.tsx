@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { TabbedProducts } from "@/components/sections/TabbedProducts";
+import { Spotlight } from "@/components/sections/Spotlight";
 import { PRODUCTS_HERO } from "@/lib/data/products";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function ProductsPage() {
       <Suspense fallback={null}>
         <TabbedProducts />
       </Suspense>
+      <Spotlight />
     </>
   );
 }
