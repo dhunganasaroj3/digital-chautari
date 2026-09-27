@@ -1,5 +1,5 @@
 # PROGRESS
-CURRENT SPRINT: 4
+CURRENT SPRINT: DONE (all 4 sprints complete — v1.0.0-rc1 handoff; deployment is the owner's step per DEPLOY-RUNBOOK.md)
 
 ## Status
 | Task | Status | Finished | Notes |
@@ -58,6 +58,8 @@ CURRENT SPRINT: 4
 | S4.5 | ✅ | 2026-09-28 | @axe-core/playwright spec; all violations fixed: AA teal info tile + team initials, h1 on blog/faq, h2 contact info cards + blog card titles, sr-only Footer heading; axe 9/9 clean |
 | S4.6 | ✅ | 2026-09-28 | @lhci/cli + lighthouserc.json (0.95/0.95/0.95/1.0 budgets): home desktop = 100/100/100/100 ×3 runs; lhci step added to ci.yml |
 | S4.7 | ✅ | 2026-09-28 | final gates green (lint 0 errors / typecheck / vitest 27 / playwright 31 vs prod / build); hex audit clean outside sanctioned OG+icon; tagged v1.0.0-rc1 |
+| S4.8 | ✅ | 2026-09-28 | .env.example (gitignore exception), security headers in next.config (5 verified via curl), canonical URL env wiring + home og:image, README, DEPLOY-RUNBOOK.md, CONTENT-TODO completed (social profiles + legal review added) |
+| S4.9 | ✅ | 2026-09-28 | REVIEW-REQUEST-S4.md (gate outputs, 18 final screenshots, ⟨TBC⟩ list, runbook link); CURRENT SPRINT: DONE — handoff commit, tag re-pointed to final state; STOP: deployment NOT attempted (owner's manual step) |
 
 ## Blocked
 - none
