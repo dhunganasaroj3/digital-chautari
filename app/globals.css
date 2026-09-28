@@ -120,6 +120,12 @@
     outline: 2px solid var(--color-dc-teal-500);
     outline-offset: 2px;
   }
+  /* Tailwind v4 preflight switched buttons to cursor: default — restore the
+     pointer affordance for every interactive control (tabs, burger, submit). */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
