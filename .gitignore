@@ -51,3 +51,6 @@ playwright-report/
 
 # animation review captures (keep reports only)
 review/animations/*/*/
+
+# UI review captures (keep reports only)
+review/ui/*/*/

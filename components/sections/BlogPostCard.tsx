@@ -21,16 +21,19 @@ export function BlogPostCard({
   href,
   /** h3 under a section h2 (home teaser); the blog index promotes titles to h2 (axe heading-order). */
   titleAs = "h3",
+  className = "",
 }: {
   post: Post;
   i: number;
   href: string;
   titleAs?: "h2" | "h3";
+  /** Extra classes on the Card root — "h-full" from grid parents keeps rows equal. */
+  className?: string;
 }) {
   const Icon = CATEGORY_ICONS[post.category as keyof typeof CATEGORY_ICONS] ?? Code2;
   const TitleTag = titleAs;
   return (
-    <Card href={href} reveal className="flex flex-col">
+    <Card href={href} reveal className={`flex h-full flex-col ${className}`}>
       <div aria-hidden className={`ratio-blog grid place-items-center rounded-lg ${chipTone(i)}`}>
         <Icon className="text-action/40 size-12" />
       </div>

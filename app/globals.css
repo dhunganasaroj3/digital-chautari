@@ -103,6 +103,21 @@
   --color-text-primary: #ffffff;
   --color-text-muted: #a7b4c7;
   --color-border-default: var(--color-dc-navy-700);
+  /* Sub-pixel seam cover: ScrollSmoother's fractional translate3d can leave
+     hairline gaps between adjacent navy sections where the light body bg
+     bleeds through. A 1px ring in the section's own color (no layout
+     impact) keeps those boundaries opaque at any fractional offset. */
+  box-shadow: 0 0 0 1px var(--color-surface);
+}
+
+/* Light remap for components that must keep paper styling inside a dark
+   section (e.g. the product mockup on the Spotlight band). */
+[data-scheme="light"] {
+  --color-surface: var(--color-dc-paper-50);
+  --color-surface-card: #ffffff;
+  --color-text-primary: var(--color-dc-ink-900);
+  --color-text-muted: var(--color-dc-muted-500);
+  --color-border-default: var(--color-dc-line-200);
 }
 
 @layer base {
@@ -115,6 +130,13 @@
     font-size: 16px; /* spec base */
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+  }
+  /* Sora's space glyph is only ~0.2em — word gaps read collapsed at display
+     sizes (flagged twice by review). Nudge back to an optical ~0.3em. */
+  h1,
+  h2,
+  h3 {
+    word-spacing: 0.1em;
   }
   :focus-visible {
     outline: 2px solid var(--color-dc-teal-500);
@@ -205,9 +227,9 @@
   aspect-ratio: var(--ratio-blog);
 }
 
-/* Closing CTA panel — Home only (teal → blue gradient per spec) */
+/* Closing CTA panel — Home only (teal → navy keeps the band on-palette) */
 @utility cta-gradient {
-  background: linear-gradient(135deg, var(--color-dc-teal-500), #2563eb);
+  background: linear-gradient(135deg, var(--color-dc-teal-500), var(--color-dc-navy-800));
 }
 
 /* Gradient headline fills (90deg teal → gold → leaf); the dark variant
@@ -256,7 +278,10 @@
   animation: page-enter 0.45s ease both;
 }
 
-/* Hero background — mint → paper wash + radial glows top right (spec) */
+/* Hero background — mint → paper wash + radial glows top right (spec).
+   The element overscans ±10% for the scrubbed drift; the bottom mask fades
+   the wash out before the element's hard edge so no seam can show at any
+   scroll offset. */
 @utility hero-bg {
   background:
     radial-gradient(
@@ -270,4 +295,5 @@
       transparent 70%
     ),
     linear-gradient(180deg, var(--color-dc-mint-100), var(--color-surface) 70%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 97%);
 }

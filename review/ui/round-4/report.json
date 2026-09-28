@@ -1,0 +1,270 @@
+{
+  "round": 4,
+  "generatedAt": "2026-09-28T14:50:12.675Z",
+  "baseUrl": "http://localhost:3000",
+  "results": [
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/home-desktop-00-hero.png",
+        "review/ui/round-4/shots/home-desktop-seg-01.png",
+        "review/ui/round-4/shots/home-desktop-seg-02.png",
+        "review/ui/round-4/shots/home-desktop-seg-03.png",
+        "review/ui/round-4/shots/home-desktop-seg-04.png",
+        "review/ui/round-4/shots/home-desktop-seg-05.png",
+        "review/ui/round-4/shots/home-desktop-seg-06.png",
+        "review/ui/round-4/shots/home-desktop-seg-07.png",
+        "review/ui/round-4/shots/home-desktop-seg-08.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 5630
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/home-mobile-00-hero.png",
+        "review/ui/round-4/shots/home-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/home-mobile-seg-01.png",
+        "review/ui/round-4/shots/home-mobile-seg-02.png",
+        "review/ui/round-4/shots/home-mobile-seg-03.png",
+        "review/ui/round-4/shots/home-mobile-seg-04.png",
+        "review/ui/round-4/shots/home-mobile-seg-05.png",
+        "review/ui/round-4/shots/home-mobile-seg-06.png",
+        "review/ui/round-4/shots/home-mobile-seg-07.png",
+        "review/ui/round-4/shots/home-mobile-seg-08.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 9815
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_about-desktop-00-hero.png",
+        "review/ui/round-4/shots/_about-desktop-seg-01.png",
+        "review/ui/round-4/shots/_about-desktop-seg-02.png",
+        "review/ui/round-4/shots/_about-desktop-seg-03.png",
+        "review/ui/round-4/shots/_about-desktop-seg-04.png",
+        "review/ui/round-4/shots/_about-desktop-seg-05.png",
+        "review/ui/round-4/shots/_about-desktop-seg-06.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 3994
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_about-mobile-00-hero.png",
+        "review/ui/round-4/shots/_about-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_about-mobile-seg-01.png",
+        "review/ui/round-4/shots/_about-mobile-seg-02.png",
+        "review/ui/round-4/shots/_about-mobile-seg-03.png",
+        "review/ui/round-4/shots/_about-mobile-seg-04.png",
+        "review/ui/round-4/shots/_about-mobile-seg-05.png",
+        "review/ui/round-4/shots/_about-mobile-seg-06.png",
+        "review/ui/round-4/shots/_about-mobile-seg-07.png",
+        "review/ui/round-4/shots/_about-mobile-seg-08.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 6193
+    },
+    {
+      "route": "/services",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_services-desktop-00-hero.png",
+        "review/ui/round-4/shots/_services-desktop-seg-01.png",
+        "review/ui/round-4/shots/_services-desktop-seg-02.png",
+        "review/ui/round-4/shots/_services-desktop-seg-03.png",
+        "review/ui/round-4/shots/_services-desktop-seg-04.png",
+        "review/ui/round-4/shots/_services-desktop-seg-05.png",
+        "review/ui/round-4/shots/_services-desktop-seg-06.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 3654
+    },
+    {
+      "route": "/services",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_services-mobile-00-hero.png",
+        "review/ui/round-4/shots/_services-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_services-mobile-seg-01.png",
+        "review/ui/round-4/shots/_services-mobile-seg-02.png",
+        "review/ui/round-4/shots/_services-mobile-seg-03.png",
+        "review/ui/round-4/shots/_services-mobile-seg-04.png",
+        "review/ui/round-4/shots/_services-mobile-seg-05.png",
+        "review/ui/round-4/shots/_services-mobile-seg-06.png",
+        "review/ui/round-4/shots/_services-mobile-seg-07.png",
+        "review/ui/round-4/shots/_services-mobile-seg-08.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 5766
+    },
+    {
+      "route": "/products",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_products-desktop-00-hero.png",
+        "review/ui/round-4/shots/_products-desktop-05-tab-1.png",
+        "review/ui/round-4/shots/_products-desktop-05-tab-2.png",
+        "review/ui/round-4/shots/_products-desktop-seg-01.png",
+        "review/ui/round-4/shots/_products-desktop-seg-02.png",
+        "review/ui/round-4/shots/_products-desktop-seg-03.png",
+        "review/ui/round-4/shots/_products-desktop-seg-04.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 1636
+    },
+    {
+      "route": "/products",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_products-mobile-00-hero.png",
+        "review/ui/round-4/shots/_products-mobile-05-tab-1.png",
+        "review/ui/round-4/shots/_products-mobile-05-tab-2.png",
+        "review/ui/round-4/shots/_products-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_products-mobile-seg-01.png",
+        "review/ui/round-4/shots/_products-mobile-seg-02.png",
+        "review/ui/round-4/shots/_products-mobile-seg-03.png",
+        "review/ui/round-4/shots/_products-mobile-seg-04.png",
+        "review/ui/round-4/shots/_products-mobile-seg-05.png",
+        "review/ui/round-4/shots/_products-mobile-seg-06.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 2501
+    },
+    {
+      "route": "/blog",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_blog-desktop-00-hero.png",
+        "review/ui/round-4/shots/_blog-desktop-seg-01.png",
+        "review/ui/round-4/shots/_blog-desktop-seg-02.png",
+        "review/ui/round-4/shots/_blog-desktop-seg-03.png",
+        "review/ui/round-4/shots/_blog-desktop-seg-04.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 1290
+    },
+    {
+      "route": "/blog",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_blog-mobile-00-hero.png",
+        "review/ui/round-4/shots/_blog-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-01.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-02.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-03.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-04.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-05.png",
+        "review/ui/round-4/shots/_blog-mobile-seg-06.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 2477
+    },
+    {
+      "route": "/contact",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_contact-desktop-00-hero.png",
+        "review/ui/round-4/shots/_contact-desktop-seg-01.png",
+        "review/ui/round-4/shots/_contact-desktop-seg-02.png",
+        "review/ui/round-4/shots/_contact-desktop-seg-03.png",
+        "review/ui/round-4/shots/_contact-desktop-seg-04.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 2142
+    },
+    {
+      "route": "/contact",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_contact-mobile-00-hero.png",
+        "review/ui/round-4/shots/_contact-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-01.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-02.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-03.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-04.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-05.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-06.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-07.png",
+        "review/ui/round-4/shots/_contact-mobile-seg-08.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 4122
+    },
+    {
+      "route": "/faq",
+      "viewport": "desktop",
+      "shots": [
+        "review/ui/round-4/shots/_faq-desktop-00-hero.png",
+        "review/ui/round-4/shots/_faq-desktop-seg-01.png",
+        "review/ui/round-4/shots/_faq-desktop-seg-02.png",
+        "review/ui/round-4/shots/_faq-desktop-seg-03.png",
+        "review/ui/round-4/shots/_faq-desktop-seg-04.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 1264
+    },
+    {
+      "route": "/faq",
+      "viewport": "mobile",
+      "shots": [
+        "review/ui/round-4/shots/_faq-mobile-00-hero.png",
+        "review/ui/round-4/shots/_faq-mobile-04-menu-open.png",
+        "review/ui/round-4/shots/_faq-mobile-seg-01.png",
+        "review/ui/round-4/shots/_faq-mobile-seg-02.png",
+        "review/ui/round-4/shots/_faq-mobile-seg-03.png",
+        "review/ui/round-4/shots/_faq-mobile-seg-04.png"
+      ],
+      "consoleErrors": [],
+      "overflow": [],
+      "brokenImgs": [],
+      "fonts": "loaded",
+      "scrollHeight": 1698
+    }
+  ]
+}

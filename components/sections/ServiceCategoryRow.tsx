@@ -40,10 +40,15 @@ export function ServiceCategoryRow({ category, flip = false }: Props) {
             </Link>
           </Reveal>
         </div>
-        <StaggerGroup className={`grid grid-cols-2 gap-5 ${flip ? "nav:order-1" : ""}`}>
+        <StaggerGroup
+          className={`grid auto-rows-fr grid-cols-2 gap-5 ${flip ? "nav:order-1" : ""}`}
+        >
           {category.subs.map((sub, i) => {
             const SubIcon = toIcon(sub.icon);
             return (
+              // Stacked icon-over-label: at 2-up mobile width an icon-left
+              // row leaves ~60px for text, which clips words like
+              // "Development" mid-glyph. auto-rows-fr evens the rows.
               <Card key={sub.title} reveal="scale">
                 <IconChip icon={SubIcon} tone={i} />
                 <h3 className="font-heading text-h3 nav:text-h3-lg mt-3 font-semibold">

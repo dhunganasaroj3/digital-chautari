@@ -13,7 +13,7 @@ export function Roadmap() {
         <ol className="relative mx-auto max-w-2xl">
           <span
             aria-hidden
-            className="bg-border-default nav:left-1/2 absolute inset-y-0 left-1.5 w-px"
+            className="from-border-default via-border-default nav:left-1/2 absolute inset-y-0 left-1.5 w-px bg-linear-to-b via-80% to-transparent"
           />
           {ROADMAP.milestones.map((milestone, i) => {
             // Conditional classes instead of odd:/even: variants — the aria-hidden
@@ -24,14 +24,17 @@ export function Roadmap() {
               <li
                 key={milestone.title}
                 className={`nav:w-1/2 relative pb-8 pl-7 last:pb-0 ${
-                  left ? "nav:pr-10 nav:text-right" : "nav:ml-auto nav:pl-10"
+                  // Left items drop the mobile gutter at nav so both columns
+                  // render mirror-symmetric cards around the spine.
+                  left ? "nav:pl-0 nav:pr-10 nav:text-right" : "nav:ml-auto nav:pl-10"
                 }`}
               >
                 <span
                   aria-hidden
-                  className={`bg-dc-leaf-500 absolute top-1 left-0 size-3 rounded-full ${
+                  className={`bg-accent-gold absolute top-[7px] left-0 size-3 rounded-full ${
                     // Only the left-side dot clears the mobile left-0; adding
                     // nav:left-auto to both sides would out-sort nav:-left-1.5.
+                    // top-[7px]: centers the dot on the 26px year pill.
                     left ? "nav:left-auto nav:-right-1.5" : "nav:-left-1.5"
                   }`}
                 />

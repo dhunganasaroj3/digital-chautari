@@ -10,13 +10,17 @@ export function IndustriesGrid() {
   return (
     <Section>
       <SectionHeading eyebrow={INDUSTRIES.eyebrow} title={INDUSTRIES.title} />
-      <StaggerGroup className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-3">
+      {/* 1-col below nav: icon + label can't share a 2-col tile at 390px
+          without wrapping "E-Commerce" mid-word. */}
+      <StaggerGroup className="nav:grid-cols-2 mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
         {INDUSTRIES.items.map((item, i) => {
           const Icon = toIcon(item.icon);
           return (
             <Card key={item.title} reveal="scale" className="flex items-center gap-3">
               <IconChip icon={Icon} tone={i} />
-              <h3 className="font-heading text-h3 nav:text-h3-lg font-semibold">{item.title}</h3>
+              <h3 className="font-heading text-h3 nav:text-h3-lg min-w-0 font-semibold">
+                {item.title}
+              </h3>
             </Card>
           );
         })}

@@ -15,16 +15,18 @@ export function ProductsTeaser() {
         {PRODUCTS_TEASER.items.map((product, i) => {
           const Icon = toIcon(product.icon);
           return (
-            <Card key={product.name} reveal>
+            <Card key={product.name} reveal className="flex h-full flex-col">
               <IconChip icon={Icon} tone={i} className="chip-scale" />
               <p className="text-eyebrow tracking-eyebrow text-action nav:text-eyebrow-lg mt-4 font-semibold uppercase">
                 {product.category}
               </p>
               <h3 className="font-heading text-h3 nav:text-h3-lg mt-1 font-bold">{product.name}</h3>
-              <p className="text-small-lg text-text-muted nav:text-base mt-2">{product.body}</p>
+              <p className="text-small-lg text-text-muted nav:text-base mt-2 flex-1">
+                {product.body}
+              </p>
               <Link
                 href={product.href}
-                className="text-small-lg text-action mt-4 inline-flex items-center gap-1 font-semibold hover:underline"
+                className="text-small-lg text-action mt-4 inline-flex items-center gap-1 self-start font-semibold hover:underline"
               >
                 Learn more <span aria-hidden>→</span>
               </Link>

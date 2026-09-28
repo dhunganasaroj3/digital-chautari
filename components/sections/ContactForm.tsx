@@ -7,7 +7,7 @@ import { useContactForm } from "@/hooks/useContactForm";
 import { Button } from "@/components/ui/Button";
 
 const inputClasses =
-  "w-full rounded-card border border-border-default bg-surface-card px-4 py-3 text-lede";
+  "w-full rounded-card border border-border-default bg-surface-card px-4 py-3 text-lede resize-none";
 
 function Field({
   label,

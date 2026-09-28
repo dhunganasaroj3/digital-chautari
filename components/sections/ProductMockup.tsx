@@ -63,7 +63,7 @@ function FeedMock() {
 function PhoneMock() {
   return (
     <div className="grid place-items-center">
-      <div className="border-border-default bg-surface w-56 rounded-2xl border p-3">
+      <div className="border-border-default bg-surface nav:w-72 w-60 rounded-2xl border p-3">
         <div className="bg-border-default mx-auto h-1.5 w-16 rounded-full" />
         <div className="mt-3 flex flex-col gap-3">
           {Array.from({ length: 3 }, (_, i) => (

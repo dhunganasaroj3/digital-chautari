@@ -27,29 +27,27 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <Section spacing="standard">
-        <div className="container-dc">
-          <StaggerGroup className="flex max-w-3xl flex-col gap-4">
-            {FAQS.map((faq) => (
-              <details
-                key={faq.q}
-                data-reveal
-                className="group rounded-card border-border-default bg-surface-card border"
-              >
-                <summary className="p-card font-heading text-h3 nav:text-h3-lg flex cursor-pointer list-none items-center justify-between gap-4 font-bold [&::-webkit-details-marker]:hidden">
-                  {faq.q}
-                  <ChevronDown
-                    aria-hidden
-                    className="text-action size-5 shrink-0 transition-transform group-open:rotate-180"
-                  />
-                </summary>
-                <p className="text-small-lg text-text-muted nav:text-base px-card pb-card">
-                  {faq.a}
-                </p>
-              </details>
-            ))}
-          </StaggerGroup>
-        </div>
+      {/* Section already provides container-dc — a nested one double-pads
+          and knocks the accordion off the hero heading's left edge. */}
+      <Section spacing="tight">
+        <StaggerGroup className="mb-10 flex max-w-4xl flex-col gap-4">
+          {FAQS.map((faq) => (
+            <details
+              key={faq.q}
+              data-reveal
+              className="group rounded-card border-border-default bg-surface-card border"
+            >
+              <summary className="p-card font-heading text-h3 nav:text-h3-lg flex cursor-pointer list-none items-center justify-between gap-4 font-bold [&::-webkit-details-marker]:hidden">
+                {faq.q}
+                <ChevronDown
+                  aria-hidden
+                  className="text-action size-5 shrink-0 transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <p className="text-small-lg text-text-muted nav:text-base px-card pb-card">{faq.a}</p>
+            </details>
+          ))}
+        </StaggerGroup>
       </Section>
     </>
   );

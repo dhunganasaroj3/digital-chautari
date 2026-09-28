@@ -6,17 +6,18 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Parallax } from "@/components/motion/Parallax";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
-/** Alternating scroll depth for the three cards — subtle, not stagey. */
-const DEPTH = [0.05, -0.035, 0.05] as const;
+/** One shared scroll depth — per-card alternating depths make the row's
+ *  internal alignment drift with scroll, which reads as a layout bug. */
+const DEPTH = 0.04;
 
 export function Testimonials() {
   return (
     <Section spacing="standard">
       <SectionHeading eyebrow="Kind words" title="What clients say" />
       <StaggerGroup className="nav:grid-cols-2 mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
-        {TESTIMONIALS.map((testimonial, i) => (
-          <Parallax key={testimonial.name} amount={DEPTH[i % DEPTH.length] ?? 0}>
-            <Card reveal="scale" className="flex flex-col">
+        {TESTIMONIALS.map((testimonial) => (
+          <Parallax key={testimonial.name} amount={DEPTH}>
+            <Card reveal="scale" className="flex h-full flex-col">
               <div className="flex gap-1" aria-hidden>
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star key={s} className="fill-accent-gold text-accent-gold size-4" />

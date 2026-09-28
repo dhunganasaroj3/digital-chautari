@@ -28,7 +28,7 @@ export function InfoTiles() {
               <Icon className="size-5" aria-hidden />
               <p
                 data-count={numeric || undefined}
-                className="font-heading mt-3 text-2xl font-extrabold"
+                className="font-heading nav:text-2xl mt-3 min-w-0 text-xl font-extrabold"
               >
                 {tile.value}
               </p>

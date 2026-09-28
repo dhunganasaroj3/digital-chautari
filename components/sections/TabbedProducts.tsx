@@ -6,7 +6,6 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { Counter } from "@/components/motion/Counter";
-import { Parallax } from "@/components/motion/Parallax";
 import { staggerReveal } from "@/lib/gsap/reveals";
 import { useGSAP } from "@/lib/gsap/plugins";
 import { ProductMockup } from "@/components/sections/ProductMockup";
@@ -50,7 +49,7 @@ export function TabbedProducts() {
         <Tabs.Root value={value} onValueChange={setValue} activationMode="automatic">
           <Tabs.List
             aria-label="Our products"
-            className="rounded-pill border-border-default bg-surface-card mx-auto flex w-fit max-w-full flex-wrap gap-1 border p-1"
+            className="rounded-pill border-border-default bg-surface-card mx-auto flex w-fit max-w-full flex-wrap gap-1.5 border p-2"
           >
             {PRODUCTS.map((product) => (
               <Tabs.Trigger
@@ -95,11 +94,12 @@ export function TabbedProducts() {
                     </Button>
                   </MagneticButton>
                 </div>
-                <Parallax amount={0.06}>
-                  <div data-reveal="scale">
-                    <ProductMockup variant={MOCKUPS[product.id]} />
-                  </div>
-                </Parallax>
+                {/* No Parallax here: a scroll-scrubbed card drifts against the
+                    section boundary and collides with the dark band below at
+                    mid-scroll stops. The scale reveal carries the motion. */}
+                <div data-reveal="scale">
+                  <ProductMockup variant={MOCKUPS[product.id]} />
+                </div>
               </Tabs.Content>
             );
           })}

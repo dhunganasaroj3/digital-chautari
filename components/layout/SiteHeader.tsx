@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 import { SITE } from "@/lib/data/site";
 import { Button } from "@/components/ui/Button";
@@ -28,8 +29,12 @@ export function SiteHeader() {
 
   return (
     // fixed (not sticky): must sit outside ScrollSmoother's transformed
-    // #smooth-content — see components/motion/SmoothScroll.tsx
-    <header className="border-border-default fixed inset-x-0 top-0 z-50 border-b bg-white/80 backdrop-blur-md">
+    // #smooth-content — see components/motion/SmoothScroll.tsx. Opaque, not
+    // translucent: every level of glass let scrolled content ghost through.
+    // NOTE: backdrop-filter here makes this header the containing block for
+    // fixed descendants — the menu scrim must portal to <body>, not render
+    // inside.
+    <header className="border-border-default fixed inset-x-0 top-0 z-50 border-b bg-white">
       <div className="container-dc flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3" aria-label="Digital Chautari — home">
           <span className="from-dc-teal-500 to-dc-teal-600 font-heading grid size-10 place-items-center rounded-xl bg-gradient-to-br text-sm font-extrabold text-white">
@@ -78,7 +83,23 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {open && <MobileNav onClose={close} />}
+      {open && (
+        <>
+          {/* Portal: the header's own styles make it a containing block for
+              fixed children, so a fixed scrim inside would cover only the
+              header box. From <body> it covers the real viewport, under the
+              z-50 header, dimming the page so the panel reads as modal. */}
+          {createPortal(
+            <div
+              aria-hidden
+              onClick={() => close()}
+              className="bg-dc-navy-900/50 nav:hidden fixed inset-x-0 top-16 bottom-0 z-40"
+            />,
+            document.body,
+          )}
+          <MobileNav onClose={close} />
+        </>
+      )}
     </header>
   );
 }

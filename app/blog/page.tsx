@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   openGraph: pageOpenGraph("Blog"),
 };
 
-/** Alternating scroll depth, mirroring the home testimonials treatment. */
-const DEPTH = [0.045, -0.03, 0.045] as const;
+/** One shared scroll depth — alternating depths misalign the card row. */
+const DEPTH = 0.035;
 
 export default function BlogPage() {
   return (
@@ -28,8 +28,8 @@ export default function BlogPage() {
       <Section spacing="standard">
         <StaggerGroup className="nav:grid-cols-2 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {POSTS.map((post, i) => (
-            <Parallax key={post.slug} amount={DEPTH[i % DEPTH.length] ?? 0}>
-              <BlogPostCard post={post} i={i} href="#" titleAs="h2" />
+            <Parallax key={post.slug} amount={DEPTH}>
+              <BlogPostCard post={post} i={i} href="#" titleAs="h2" className="h-full" />
             </Parallax>
           ))}
         </StaggerGroup>

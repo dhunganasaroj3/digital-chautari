@@ -26,7 +26,7 @@ test.describe("axe accessibility scan", () => {
         }
         window.scrollTo(0, 0);
       });
-      await page.waitForTimeout(400);
+      await page.waitForTimeout(1200); // smoother inertia + fades fully settle
       const results = await new AxeBuilder({ page }).analyze();
       const violations = results.violations.map(
         (v) =>

@@ -42,7 +42,8 @@ export function WhoWeAre() {
             </Button>
           </div>
         </div>
-        <StaggerGroup className="grid grid-cols-2 gap-5">
+        {/* auto-rows-fr: title wrapping must not make the 2×2 rows unequal */}
+        <StaggerGroup className="grid auto-rows-fr grid-cols-2 gap-5">
           {WHO_WE_ARE.teasers.map((teaser, i) => {
             const Icon = toIcon(teaser.icon);
             return (

@@ -99,7 +99,7 @@ export const SECTORS = [
   {
     icon: "ShoppingCart",
     title: "E-Commerce",
-    body: "Storefronts and campaigns that bring customers back, not just in once.",
+    body: "Storefronts and campaigns that bring customers back, not just once.",
   },
   {
     icon: "Building2",

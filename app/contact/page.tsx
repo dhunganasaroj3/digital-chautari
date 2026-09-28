@@ -28,12 +28,14 @@ export default function ContactPage() {
         lede={CONTACT_HERO.lede}
       />
 
+      {/* Full-width on small screens: long email addresses must not break
+          mid-word in a 2-col squeeze. */}
       <Section spacing="tight">
-        <StaggerGroup className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+        <StaggerGroup className="nav:grid-cols-2 grid grid-cols-1 gap-5 lg:grid-cols-4">
           {INFO_CARDS.map((info, i) => {
             const Icon = toIcon(info.icon);
             return (
-              <Card key={info.title} reveal>
+              <Card key={info.title} reveal className="flex h-full flex-col">
                 <IconChip icon={Icon} tone={i} />
                 <h2 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{info.title}</h2>
                 <p className="text-small-lg text-text-muted mt-1 break-words">{info.body}</p>
@@ -45,16 +47,16 @@ export default function ContactPage() {
 
       <Section spacing="tight">
         <SectionHeading eyebrow={DIRECT_LINES.eyebrow} title={DIRECT_LINES.title} />
-        <StaggerGroup className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
+        <StaggerGroup className="nav:grid-cols-2 mt-10 grid grid-cols-1 gap-5 lg:grid-cols-4">
           {DIRECT_LINES.items.map((line, i) => {
             const Icon = toIcon(line.icon);
             return (
-              <Card key={line.title} reveal>
+              <Card key={line.title} reveal className="flex h-full flex-col">
                 <IconChip icon={Icon} tone={i} />
                 <h3 className="font-heading text-h3 nav:text-h3-lg mt-3 font-bold">{line.title}</h3>
                 <a
                   href={`mailto:${line.email}`}
-                  className="text-small-lg text-action mt-1 inline-block font-semibold wrap-anywhere hover:underline"
+                  className="text-small text-action mt-auto inline-block pt-2 font-semibold tracking-tight wrap-anywhere hover:underline"
                 >
                   {line.email}
                 </a>

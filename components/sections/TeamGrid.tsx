@@ -1,4 +1,5 @@
 import { Section } from "@/components/ui/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { TEAM } from "@/lib/data/about";
@@ -7,7 +8,10 @@ import { chipTone, initials } from "@/lib/utils";
 export function TeamGrid() {
   return (
     <Section id="team" className="scroll-mt-20">
-      <StaggerGroup className="nav:grid-cols-3 grid grid-cols-2 gap-5 lg:grid-cols-4">
+      {/* Every other section carries an eyebrow/title — the team grid was the
+          one section that started abruptly after the dark trust band. */}
+      <SectionHeading eyebrow="Team" title="The people behind the work" />
+      <StaggerGroup className="nav:grid-cols-3 mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
         {TEAM.map((member, i) => (
           <Card key={member.name} reveal>
             <span

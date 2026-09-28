@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { SITE } from "@/lib/data/site";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,7 @@ type Props = {
 
 /** Mobile navigation panel with a keyboard focus trap and body scroll lock. */
 export function MobileNav({ onClose }: Props) {
+  const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -60,19 +62,27 @@ export function MobileNav({ onClose }: Props) {
     <div
       id="mobile-nav"
       ref={panelRef}
-      className="border-border-default bg-surface-card nav:hidden border-t"
+      className="border-border-default bg-surface-card nav:hidden relative border-t"
     >
-      <nav aria-label="Mobile" className="container-dc flex flex-col gap-1 py-4">
-        {SITE.nav.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => onClose()}
-            className="rounded-btn text-text-primary hover:bg-surface hover:text-action px-3 py-3 text-base font-medium transition-colors"
-          >
-            {item.label}
-          </Link>
-        ))}
+      <nav aria-label="Mobile" className="container-dc flex flex-col gap-1 pt-3 pb-6">
+        {SITE.nav.map((item) => {
+          const active = pathname === item.href;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => onClose()}
+              aria-current={active ? "page" : undefined}
+              className={`rounded-btn px-3 py-3 text-base font-medium transition-colors ${
+                active
+                  ? "bg-dc-palteal-100 text-action font-semibold"
+                  : "text-text-primary hover:bg-surface hover:text-action"
+              }`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
         <Button href="/contact" variant="primary" className="mt-3" onClick={() => onClose()}>
           Contact Us
         </Button>

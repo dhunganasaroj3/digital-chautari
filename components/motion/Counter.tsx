@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import type { ReactNode } from "react";
-import { gsap, useGSAP } from "@/lib/gsap/plugins";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/plugins";
 import { EASE } from "@/lib/gsap/eases";
 
 type Props = {
@@ -56,23 +56,33 @@ export function Counter({ children, className = "", startDelay = 0 }: Props) {
           el.dataset.countPrefix = parsed.prefix;
           el.dataset.countSuffix = parsed.suffix;
           const decimals = (parsed.target.toString().split(".")[1] ?? "").length;
-          const state = { value: 0 };
-          el.textContent = `${parsed.prefix}${(0).toFixed(decimals)}${parsed.suffix}`;
-          counters.push(
-            gsap.to(state, {
-              value: parsed.target,
-              duration: 1.6,
-              delay: startDelay,
-              ease: EASE.out,
-              scrollTrigger: { trigger: el, start: "top 90%", once: true },
-              onUpdate: () => {
-                el.textContent = `${parsed.prefix}${state.value.toFixed(decimals)}${parsed.suffix}`;
-              },
-              onComplete: () => {
-                el.textContent = `${parsed.prefix}${parsed.target}${parsed.suffix}`;
-              },
-            }),
-          );
+          const write = (v: number) => {
+            el.textContent = `${parsed.prefix}${v.toFixed(decimals)}${parsed.suffix}`;
+          };
+          // The tween is created from onEnter, NOT bound to the trigger —
+          // a bound tween gets frozen at its first write ("0%") when a
+          // font-swap refresh moves the element below the start line after
+          // firing. Decoupled, it always runs to completion once entered.
+          // start "top bottom": any visibility counts — a first-screen stat
+          // must never sit at its markup value OR at a zero placeholder.
+          ScrollTrigger.create({
+            trigger: el,
+            start: "top bottom",
+            once: true,
+            onEnter: () => {
+              const state = { value: 0 };
+              counters.push(
+                gsap.to(state, {
+                  value: parsed.target,
+                  duration: 1.6,
+                  delay: startDelay,
+                  ease: EASE.out,
+                  onUpdate: () => write(state.value),
+                  onComplete: () => write(parsed.target),
+                }),
+              );
+            },
+          });
         });
         return () => counters.forEach((tween) => tween.kill());
       });
