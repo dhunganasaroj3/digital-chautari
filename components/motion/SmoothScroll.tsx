@@ -1,6 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { gsap, ScrollSmoother, ScrollTrigger, useGSAP } from "@/lib/gsap/plugins";
 
 /**
@@ -14,6 +15,8 @@ import { gsap, ScrollSmoother, ScrollTrigger, useGSAP } from "@/lib/gsap/plugins
  * its space in both modes.
  */
 export function SmoothScroll({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   useGSAP(() => {
     const mm = gsap.matchMedia();
     mm.add("(pointer: fine) and (prefers-reduced-motion: no-preference)", () => {
@@ -57,6 +60,18 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     });
     return () => mm.revert();
   });
+
+  // Route changes must land at the top. Next.js resets the native window
+  // scroll, but the smoother's content transform holds the old position —
+  // sync both explicitly (instant: users expect a hard cut on navigation).
+  useEffect(() => {
+    const smoother = ScrollSmoother.get();
+    if (smoother) {
+      smoother.scrollTo(0, false);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return (
     // wrapper stays a plain block: as a fixed-height flex parent it would

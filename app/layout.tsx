@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { ScrollTopButton } from "@/components/layout/ScrollTopButton";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ORG_JSONLD, SITE_JSONLD, siteUrl } from "@/lib/data/seo";
 import "./globals.css";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
           <SiteFooter />
         </SmoothScroll>
+        <ScrollTopButton />
       </body>
     </html>
   );
