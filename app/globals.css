@@ -232,6 +232,13 @@
   background: linear-gradient(135deg, var(--color-dc-teal-500), var(--color-dc-navy-800));
 }
 
+/* Footer columns reach the container box edges (1120px) — one gutter wider
+   than the content box per side. The min/max clamp stretches only to the
+   container's actual box (no bleed to the viewport edge below 1200px). */
+@utility footer-wide {
+  margin-inline: calc(-1 * min(var(--spacing-gutter), max(0px, (100vw - var(--container-dc)) / 2)));
+}
+
 /* Gradient headline fills (90deg teal → gold → leaf); the dark variant
    uses full-strength gold (A-2's #b9821b stop is for light backgrounds) */
 @utility gradient-text {
