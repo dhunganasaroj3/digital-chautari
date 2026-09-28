@@ -7,8 +7,8 @@ import { PHYSIO_SPOTLIGHT } from "@/lib/data/products";
 export function Spotlight() {
   return (
     <Section dark>
+      <SectionHeading dark eyebrow={PHYSIO_SPOTLIGHT.eyebrow} title={PHYSIO_SPOTLIGHT.title} />
       <Reveal>
-        <SectionHeading dark eyebrow={PHYSIO_SPOTLIGHT.eyebrow} title={PHYSIO_SPOTLIGHT.title} />
         <p className="text-col text-lede nav:text-lede-lg text-text-muted mt-4">
           {PHYSIO_SPOTLIGHT.body}
         </p>

@@ -5,15 +5,12 @@ import { Card } from "@/components/ui/Card";
 import { IconChip } from "@/components/ui/IconChip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
 export function ProductsTeaser() {
   return (
     <Section spacing="standard">
-      <Reveal>
-        <SectionHeading eyebrow="Our products" title={PRODUCTS_TEASER.title} />
-      </Reveal>
+      <SectionHeading eyebrow="Our products" title={PRODUCTS_TEASER.title} />
       <StaggerGroup className="nav:grid-cols-2 mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
         {PRODUCTS_TEASER.items.map((product, i) => {
           const Icon = toIcon(product.icon);

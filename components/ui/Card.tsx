@@ -5,8 +5,9 @@ type Props = {
   children: ReactNode;
   /** Renders the whole card as a link. */
   href?: string;
-  /** Marks the card for the canonical GSAP reveal when inside a StaggerGroup. */
-  reveal?: boolean;
+  /** Marks the card for the canonical GSAP reveal when inside a
+   *  StaggerGroup. "scale" grows in; true fades/rises. */
+  reveal?: boolean | "scale";
   /** Sets data-scheme="dark" on the card itself (token remap for stand-out tiers). */
   dark?: boolean;
   /** Set false for static containers (forms, map) — no hover lift. */
@@ -27,16 +28,17 @@ export function Card({
       ? "transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover"
       : ""
   } ${dark ? "text-text-primary" : ""} ${className}`;
+  const revealAttr = reveal === "scale" ? "scale" : reveal ? "" : undefined;
   const scheme = dark ? "dark" : undefined;
   if (href) {
     return (
-      <Link href={href} data-reveal={reveal || undefined} data-scheme={scheme} className={classes}>
+      <Link href={href} data-reveal={revealAttr} data-scheme={scheme} className={classes}>
         {children}
       </Link>
     );
   }
   return (
-    <div data-reveal={reveal || undefined} data-scheme={scheme} className={classes}>
+    <div data-reveal={revealAttr} data-scheme={scheme} className={classes}>
       {children}
     </div>
   );

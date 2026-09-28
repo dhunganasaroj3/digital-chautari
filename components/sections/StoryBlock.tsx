@@ -8,14 +8,16 @@ export function StoryBlock() {
   return (
     <Section>
       <div className="nav:grid-cols-2 grid grid-cols-1 items-center gap-10">
-        <Reveal>
+        <div>
           <SectionHeading eyebrow={STORY.eyebrow} title={STORY.title} />
-          {STORY.paragraphs.map((paragraph, i) => (
-            <p key={i} className="text-lede text-text-muted nav:text-lede-lg mt-4">
-              {paragraph}
-            </p>
-          ))}
-        </Reveal>
+          <Reveal>
+            {STORY.paragraphs.map((paragraph, i) => (
+              <p key={i} className="text-lede text-text-muted nav:text-lede-lg mt-4">
+                {paragraph}
+              </p>
+            ))}
+          </Reveal>
+        </div>
         <InfoTiles />
       </div>
     </Section>

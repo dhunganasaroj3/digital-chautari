@@ -48,3 +48,6 @@ playwright-report/
 
 # IDE
 .idea/
+
+# animation review captures (keep reports only)
+review/animations/*/*/

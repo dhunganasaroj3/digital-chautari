@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
+import { MagneticButton } from "@/components/motion/MagneticButton";
 import { Reveal } from "@/components/motion/Reveal";
 
 type Props = {
@@ -23,14 +24,18 @@ export function ClosingCta({ variant = "gradient", eyebrow, title, cta, secondar
             <h2 className="font-heading text-h2 nav:text-h2-lg mt-4 font-bold">{title}</h2>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               {cta ? (
-                <Button href={cta.href} variant="primary">
-                  {cta.label}
-                </Button>
+                <MagneticButton>
+                  <Button href={cta.href} variant="primary">
+                    {cta.label}
+                  </Button>
+                </MagneticButton>
               ) : null}
               {secondaryCta ? (
-                <Button href={secondaryCta.href} variant="ghostDark">
-                  {secondaryCta.label}
-                </Button>
+                <MagneticButton strength={0.25}>
+                  <Button href={secondaryCta.href} variant="ghostDark">
+                    {secondaryCta.label}
+                  </Button>
+                </MagneticButton>
               ) : null}
             </div>
           </div>
@@ -46,12 +51,16 @@ export function ClosingCta({ variant = "gradient", eyebrow, title, cta, secondar
             Ready to build something extraordinary together?
           </h2>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/contact" variant="onGradient">
-              Start a Project →
-            </Button>
-            <Button href="/services" variant="ghostOnGradient">
-              View Services
-            </Button>
+            <MagneticButton>
+              <Button href="/contact" variant="onGradient">
+                Start a Project →
+              </Button>
+            </MagneticButton>
+            <MagneticButton strength={0.25}>
+              <Button href="/services" variant="ghostOnGradient">
+                View Services
+              </Button>
+            </MagneticButton>
           </div>
         </div>
       </Reveal>

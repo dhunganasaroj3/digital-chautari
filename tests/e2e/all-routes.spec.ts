@@ -32,6 +32,8 @@ test.describe("all routes", () => {
 test.describe("reveal stability across repeated navigation", () => {
   // GSAP leak regression: re-mounting StaggerGroup/Reveal on repeat visits must not
   // double-register ScrollTriggers or leave elements stuck hidden.
+  // 18 navigations × 3 scroll-and-settle passes — the default 30s is not enough.
+  test.setTimeout(120_000);
   test("Home→Services→Products→About→Contact→Home ×3 reveals cleanly", async ({ page }) => {
     const cycle = ["/", "/services", "/products", "/about", "/contact", "/"];
     for (let i = 0; i < 3; i++) {
@@ -45,7 +47,9 @@ test.describe("reveal stability across repeated navigation", () => {
             await new Promise((r) => setTimeout(r, 60));
           }
         });
-        await page.waitForTimeout(900);
+        // Motion spec v2: 0.8s reveals + 80ms stagger — the last batch item
+        // can still be ~0.999 opaque when the v1-era 900ms settle elapsed.
+        await page.waitForTimeout(2400);
         const hidden = await page.evaluate(
           () =>
             [...document.querySelectorAll("[data-reveal]")].filter(

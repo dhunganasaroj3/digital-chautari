@@ -2,16 +2,13 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { ROADMAP } from "@/lib/data/about";
 
 export function Roadmap() {
   return (
     <Section dark>
-      <Reveal>
-        <SectionHeading dark eyebrow={ROADMAP.eyebrow} title={ROADMAP.title} />
-      </Reveal>
+      <SectionHeading dark eyebrow={ROADMAP.eyebrow} title={ROADMAP.title} />
       <StaggerGroup className="mt-10">
         <ol className="relative mx-auto max-w-2xl">
           <span

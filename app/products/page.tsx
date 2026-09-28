@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { TabbedProducts } from "@/components/sections/TabbedProducts";
@@ -17,9 +16,7 @@ export default function ProductsPage() {
   return (
     <>
       <Hero {...PRODUCTS_HERO} />
-      <Suspense fallback={null}>
-        <TabbedProducts />
-      </Suspense>
+      <TabbedProducts />
       <Spotlight />
     </>
   );

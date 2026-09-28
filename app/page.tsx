@@ -5,6 +5,8 @@ import { toIcon } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { StatBar } from "@/components/ui/StatBar";
 import { Hero } from "@/components/sections/Hero";
+import { Counter } from "@/components/motion/Counter";
+import { MagneticButton } from "@/components/motion/MagneticButton";
 import { FeatureStrip } from "@/components/sections/FeatureStrip";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { DarkStatsBanner } from "@/components/sections/DarkStatsBanner";
@@ -24,15 +26,22 @@ function HomeHero() {
   return (
     <Hero eyebrow={HERO.eyebrow} title={HERO.title} gradient={HERO.gradient} lede={HERO.lede}>
       <div className="flex flex-wrap items-center gap-4">
-        <Button href={HERO.primaryCta.href} variant="primary">
-          {HERO.primaryCta.label}
-        </Button>
-        <Button href={HERO.ghostCta.href} variant="ghost">
-          {HERO.ghostCta.label}
-        </Button>
+        <MagneticButton>
+          <Button href={HERO.primaryCta.href} variant="primary">
+            {HERO.primaryCta.label}
+          </Button>
+        </MagneticButton>
+        <MagneticButton strength={0.25}>
+          <Button href={HERO.ghostCta.href} variant="ghost">
+            {HERO.ghostCta.label}
+          </Button>
+        </MagneticButton>
       </div>
       <div className="mt-10">
-        <StatBar items={stats} />
+        {/* startDelay lets the hero intro finish before the numbers count */}
+        <Counter startDelay={1.4}>
+          <StatBar items={stats} />
+        </Counter>
       </div>
     </Hero>
   );

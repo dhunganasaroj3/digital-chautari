@@ -7,7 +7,6 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconChip } from "@/components/ui/IconChip";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { CONTACT_HERO, INFO_CARDS, DIRECT_LINES, RESPONSE_TIMES } from "@/lib/data/contact";
 import { toIcon } from "@/lib/utils";
@@ -45,9 +44,7 @@ export default function ContactPage() {
       </Section>
 
       <Section spacing="tight">
-        <Reveal>
-          <SectionHeading eyebrow={DIRECT_LINES.eyebrow} title={DIRECT_LINES.title} />
-        </Reveal>
+        <SectionHeading eyebrow={DIRECT_LINES.eyebrow} title={DIRECT_LINES.title} />
         <StaggerGroup className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
           {DIRECT_LINES.items.map((line, i) => {
             const Icon = toIcon(line.icon);

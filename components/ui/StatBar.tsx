@@ -33,7 +33,10 @@ export function StatBar({
           >
             <IconChip icon={item.icon} tone={i} />
             <div>
-              <p className="font-heading text-2xl font-extrabold">{item.value}</p>
+              {/* data-count: animated by the motion Counter primitive when wrapped in one */}
+              <p data-count className="font-heading text-2xl font-extrabold">
+                {item.value}
+              </p>
               <p className="text-small-lg text-text-muted">{item.label}</p>
             </div>
           </div>

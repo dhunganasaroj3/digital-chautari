@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ORG_JSONLD, SITE_JSONLD, siteUrl } from "@/lib/data/seo";
 import "./globals.css";
 
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([ORG_JSONLD, SITE_JSONLD]) }}
@@ -45,10 +46,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <SmoothScroll>
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </SmoothScroll>
       </body>
     </html>
   );

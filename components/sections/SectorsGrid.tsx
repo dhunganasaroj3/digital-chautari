@@ -4,15 +4,12 @@ import { Card } from "@/components/ui/Card";
 import { IconChip } from "@/components/ui/IconChip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
 export function SectorsGrid() {
   return (
     <Section spacing="standard">
-      <Reveal>
-        <SectionHeading eyebrow="Sectors" title="Sectors we serve" />
-      </Reveal>
+      <SectionHeading eyebrow="Sectors" title="Sectors we serve" />
       <StaggerGroup className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-3">
         {SECTORS.map((sector, i) => {
           const Icon = toIcon(sector.icon);

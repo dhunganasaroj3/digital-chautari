@@ -27,7 +27,9 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="border-border-default sticky top-0 z-50 border-b bg-white/80 backdrop-blur-md">
+    // fixed (not sticky): must sit outside ScrollSmoother's transformed
+    // #smooth-content — see components/motion/SmoothScroll.tsx
+    <header className="border-border-default fixed inset-x-0 top-0 z-50 border-b bg-white/80 backdrop-blur-md">
       <div className="container-dc flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3" aria-label="Digital Chautari — home">
           <span className="from-dc-teal-500 to-dc-teal-600 font-heading grid size-10 place-items-center rounded-xl bg-gradient-to-br text-sm font-extrabold text-white">

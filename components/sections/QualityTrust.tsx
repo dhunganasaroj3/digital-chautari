@@ -2,7 +2,6 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconChip } from "@/components/ui/IconChip";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { QUALITY } from "@/lib/data/about";
 import { toIcon } from "@/lib/utils";
@@ -10,9 +9,7 @@ import { toIcon } from "@/lib/utils";
 export function QualityTrust() {
   return (
     <Section dark>
-      <Reveal>
-        <SectionHeading dark eyebrow={QUALITY.eyebrow} title={QUALITY.title} />
-      </Reveal>
+      <SectionHeading dark eyebrow={QUALITY.eyebrow} title={QUALITY.title} />
       <StaggerGroup className="nav:grid-cols-2 mt-10 grid grid-cols-1 gap-5 lg:grid-cols-4">
         {QUALITY.items.map((item) => {
           const Icon = toIcon(item.icon);

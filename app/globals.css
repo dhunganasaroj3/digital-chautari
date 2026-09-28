@@ -106,14 +106,8 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
+  /* NOTE: no CSS scroll-behavior — it fights ScrollSmoother's transform
+     (motion spec v2). Smoothness comes from components/motion/SmoothScroll. */
   body {
     background-color: var(--color-surface);
     color: var(--color-text-primary);
@@ -227,6 +221,18 @@
     var(--color-dc-gold-500),
     var(--color-dc-leaf-500)
   );
+}
+
+/* Marquee edge fade — soft mask so looping content dissolves at the edges */
+@utility marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+/* Marquee duplicate copy: only needed while the loop animates */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-clone {
+    display: none;
+  }
 }
 
 /* Page transition — 0.45s fade + 8px rise on every route (killed by reduced-motion) */

@@ -1,0 +1,220 @@
+{
+  "round": 2,
+  "generatedAt": "2026-09-27T21:23:52.945Z",
+  "baseUrl": "http://localhost:3000",
+  "pages": [
+    "/",
+    "/about",
+    "/services",
+    "/products",
+    "/contact",
+    "/blog"
+  ],
+  "gates": {
+    "reducedMotion": true,
+    "noConsoleErrors": true,
+    "layoutStability": true,
+    "scrollPerformance": true,
+    "nothingStuckHidden": true,
+    "countersFinal": true,
+    "motionPresent": true,
+    "passed": true
+  },
+  "scores": {
+    "fluidity": 8,
+    "richness": 8,
+    "choreography": 8,
+    "consistency": 8,
+    "craft": 8
+  },
+  "overall": 8,
+  "passThreshold": 8,
+  "passed": true,
+  "audits": [
+    {
+      "route": "/",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_-01-hero-mid.png",
+        "review/animations/round-2/shots/_-02-hero-settled.png",
+        "review/animations/round-2/shots/_-scroll-03.png",
+        "review/animations/round-2/shots/_-scroll-06.png",
+        "review/animations/round-2/shots/_-scroll-09.png",
+        "review/animations/round-2/shots/_-scroll-12.png",
+        "review/animations/round-2/shots/_-03-lower-page.png",
+        "review/animations/round-2/shots/_-04-after-burst.png"
+      ],
+      "cls": 0,
+      "clsEntries": 0,
+      "longTasks": 1,
+      "longTaskMs": 66,
+      "revealCount": 33,
+      "splitTargets": 7,
+      "splitLines": 9,
+      "marquees": 1,
+      "smoothWrapper": true,
+      "parallaxTracks": 1,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": [
+        "3",
+        "7+",
+        "100%",
+        "250+",
+        "40+",
+        "1M+"
+      ]
+    },
+    {
+      "route": "/about",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_about-01-hero-mid.png",
+        "review/animations/round-2/shots/_about-02-hero-settled.png",
+        "review/animations/round-2/shots/_about-scroll-03.png",
+        "review/animations/round-2/shots/_about-scroll-06.png",
+        "review/animations/round-2/shots/_about-scroll-09.png",
+        "review/animations/round-2/shots/_about-scroll-12.png",
+        "review/animations/round-2/shots/_about-03-lower-page.png",
+        "review/animations/round-2/shots/_about-04-after-burst.png"
+      ],
+      "cls": 0,
+      "clsEntries": 0,
+      "longTasks": 1,
+      "longTaskMs": 63,
+      "revealCount": 23,
+      "splitTargets": 3,
+      "splitLines": 5,
+      "marquees": 0,
+      "smoothWrapper": true,
+      "parallaxTracks": 0,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": [
+        "2025",
+        "3",
+        "7+"
+      ]
+    },
+    {
+      "route": "/services",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_services-01-hero-mid.png",
+        "review/animations/round-2/shots/_services-02-hero-settled.png",
+        "review/animations/round-2/shots/_services-scroll-03.png",
+        "review/animations/round-2/shots/_services-scroll-06.png",
+        "review/animations/round-2/shots/_services-scroll-09.png",
+        "review/animations/round-2/shots/_services-scroll-12.png",
+        "review/animations/round-2/shots/_services-03-lower-page.png",
+        "review/animations/round-2/shots/_services-04-after-burst.png"
+      ],
+      "cls": 0,
+      "clsEntries": 0,
+      "longTasks": 1,
+      "longTaskMs": 68,
+      "revealCount": 34,
+      "splitTargets": 6,
+      "splitLines": 7,
+      "marquees": 0,
+      "smoothWrapper": true,
+      "parallaxTracks": 0,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": []
+    },
+    {
+      "route": "/products",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_products-01-hero-mid.png",
+        "review/animations/round-2/shots/_products-02-hero-settled.png",
+        "review/animations/round-2/shots/_products-scroll-03.png",
+        "review/animations/round-2/shots/_products-scroll-06.png",
+        "review/animations/round-2/shots/_products-scroll-09.png",
+        "review/animations/round-2/shots/_products-scroll-12.png",
+        "review/animations/round-2/shots/_products-03-lower-page.png",
+        "review/animations/round-2/shots/_products-04-after-burst.png"
+      ],
+      "cls": 0.00009949845679012347,
+      "clsEntries": 6,
+      "longTasks": 1,
+      "longTaskMs": 59,
+      "revealCount": 3,
+      "splitTargets": 1,
+      "splitLines": 2,
+      "marquees": 0,
+      "smoothWrapper": true,
+      "parallaxTracks": 0,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": [
+        "40+",
+        "250+",
+        "12"
+      ]
+    },
+    {
+      "route": "/contact",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_contact-01-hero-mid.png",
+        "review/animations/round-2/shots/_contact-02-hero-settled.png",
+        "review/animations/round-2/shots/_contact-scroll-03.png",
+        "review/animations/round-2/shots/_contact-scroll-06.png",
+        "review/animations/round-2/shots/_contact-scroll-09.png",
+        "review/animations/round-2/shots/_contact-scroll-12.png",
+        "review/animations/round-2/shots/_contact-03-lower-page.png",
+        "review/animations/round-2/shots/_contact-04-after-burst.png"
+      ],
+      "cls": 0,
+      "clsEntries": 0,
+      "longTasks": 1,
+      "longTaskMs": 68,
+      "revealCount": 8,
+      "splitTargets": 1,
+      "splitLines": 2,
+      "marquees": 0,
+      "smoothWrapper": true,
+      "parallaxTracks": 0,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": []
+    },
+    {
+      "route": "/blog",
+      "consoleErrors": [],
+      "shots": [
+        "review/animations/round-2/shots/_blog-01-hero-mid.png",
+        "review/animations/round-2/shots/_blog-02-hero-settled.png",
+        "review/animations/round-2/shots/_blog-scroll-03.png",
+        "review/animations/round-2/shots/_blog-scroll-06.png",
+        "review/animations/round-2/shots/_blog-scroll-09.png",
+        "review/animations/round-2/shots/_blog-scroll-12.png",
+        "review/animations/round-2/shots/_blog-03-lower-page.png",
+        "review/animations/round-2/shots/_blog-04-after-burst.png"
+      ],
+      "cls": 0,
+      "clsEntries": 0,
+      "longTasks": 1,
+      "longTaskMs": 68,
+      "revealCount": 3,
+      "splitTargets": 0,
+      "splitLines": 1,
+      "marquees": 0,
+      "smoothWrapper": true,
+      "parallaxTracks": 0,
+      "hiddenAtRest": [],
+      "countersFinal": true,
+      "counterSamples": []
+    }
+  ],
+  "reducedMotionHidden": {
+    "/": [],
+    "/about": [],
+    "/services": [],
+    "/products": [],
+    "/contact": [],
+    "/blog": []
+  }
+}

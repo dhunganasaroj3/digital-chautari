@@ -4,16 +4,13 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { PRICING } from "@/lib/data/services";
 
 export function PricingTable() {
   return (
     <Section id="pricing" className="scroll-mt-20">
-      <Reveal>
-        <SectionHeading eyebrow={PRICING.eyebrow} title={PRICING.title} />
-      </Reveal>
+      <SectionHeading eyebrow={PRICING.eyebrow} title={PRICING.title} />
       <StaggerGroup className="mt-10 grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
         {PRICING.tiers.map((tier) => (
           <Card key={tier.name} reveal dark={tier.dark} className="relative flex h-full flex-col">
