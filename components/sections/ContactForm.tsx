@@ -3,7 +3,7 @@
 import { Send } from "lucide-react";
 import type { ReactNode } from "react";
 import { PROJECT_TYPES } from "@/lib/core/validation";
-import { useContactForm } from "@/hooks/useContactForm";
+import { IS_STATIC_EXPORT, useContactForm } from "@/hooks/useContactForm";
 import { Button } from "@/components/ui/Button";
 
 const inputClasses =
@@ -147,7 +147,9 @@ export function ContactForm() {
       <div aria-live="polite" className="mt-4">
         {result?.ok ? (
           <p className="text-small-lg text-action font-semibold">
-            Thanks — we&apos;ll reply within 24 hours.
+            {IS_STATIC_EXPORT
+              ? "Your email app should have opened with the message ready — just press send."
+              : "Thanks — we'll reply within 24 hours."}
           </p>
         ) : null}
         {formError ? (

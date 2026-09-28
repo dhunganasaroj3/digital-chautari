@@ -20,11 +20,15 @@ export const SITE_JSONLD = {
   url: siteUrl(),
 };
 
+// og.png is the committed render of the retired /api/og route's markup
+// (extensionless convention files get served as application/octet-stream on
+// GitHub Pages). Root-relative — Next prefixes basePath automatically.
 export function pageOpenGraph(title: string) {
   return {
     type: "website" as const,
     siteName: "Digital Chautari",
-    images: [`/api/og?title=${encodeURIComponent(title)}`],
+    title,
+    images: ["/og.png"],
   };
 }
 

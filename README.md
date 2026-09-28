@@ -18,13 +18,16 @@ Resend (optional — see env vars) · Vitest + Testing Library · Playwright · 
 
 ```bash
 pnpm dev        # dev server on :3000 (styleguide at /dev, noindex)
-pnpm build      # production build
+pnpm build      # production build (server mode)
 pnpm start      # serve the production build
 pnpm lint       # eslint
 pnpm typecheck  # tsc --noEmit
 pnpm test       # vitest (unit)
 pnpm exec playwright test   # e2e — prefers the running :3000 server; reuseExistingServer is on
 pnpm exec lhci autorun      # Lighthouse budgets (lighthouserc.json)
+
+# Static export for GitHub Pages (what the deploy workflow builds):
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/digital-chautari pnpm build   # → out/
 ```
 
 E2e quality bar: every route must answer 200 with **zero console errors**, reveals must
@@ -51,7 +54,9 @@ Copy `.env.example` to `.env` for local overrides. All are optional locally:
 
 ## Docs
 
-- **Deploying:** see [docs/DEPLOY-RUNBOOK.md](docs/DEPLOY-RUNBOOK.md)
-  — deployment is performed by the site owner, not by tooling.
+- **Deploying:** [docs/DEPLOY-RUNBOOK.md](docs/DEPLOY-RUNBOOK.md) — pushes to
+  `main` auto-deploy a static export to GitHub Pages; the runbook also covers
+  static-hosting trade-offs (contact form, OG images) and an optional Vercel
+  server-mode deploy.
 - Copy marked ⟨TBC⟩ in `lib/data/` still needs real client input
   (all are data-file edits — no code changes required).

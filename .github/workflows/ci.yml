@@ -11,5 +11,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm typecheck
+      # Build the same static export the deploy workflow publishes (GitHub
+      # Pages), then run Lighthouse against it — `next start` can't serve
+      # an output:export build.
       - run: pnpm build
-      - run: pnpm exec lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand="pnpm start"
+        env:
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
+      - run: pnpm exec lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand="npx -y serve out"
