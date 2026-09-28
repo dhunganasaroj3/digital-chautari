@@ -60,3 +60,16 @@ Copy `.env.example` to `.env` for local overrides. All are optional locally:
   server-mode deploy.
 - Copy marked ⟨TBC⟩ in `lib/data/` still needs real client input
   (all are data-file edits — no code changes required).
+
+---
+
+# ⚠️ ALL RIGHTS RESERVED
+
+## **COPYING OR REUSING THE CODE OR DESIGN OF THIS PROJECT WITHOUT PRIOR WRITTEN CONSENT MAY LEAD TO A LAWSUIT.**
+
+This website was designed and developed by **Saroj Dhungana** as an original
+work, built as a demo/task submission. "Digital Chautari" is a **fictitious
+brand name** used only as demo content. Recruiters
+and reviewers are welcome to **evaluate** this project, but the code and
+design may **not** be copied, reused, or built upon without permission. See
+the [LICENSE](LICENSE) for full terms (licensing: dhunganasaroj3@gmail.com).
