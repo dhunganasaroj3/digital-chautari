@@ -12,5 +12,5 @@
    - `sitemap.xml` + `robots.txt` load
 4. The localhost fallbacks swap automatically once `NEXT_PUBLIC_SITE_URL` is set —
    redeploy if the variable is added after the first deploy.
-5. Post-launch: replace the ⟨TBC⟩ content items listed in [CONTENT-TODO.md](../../CONTENT-TODO.md)
+5. Post-launch: replace the ⟨TBC⟩ content items in `lib/data/`
    (all are data-file edits, no code changes).

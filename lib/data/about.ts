@@ -91,7 +91,7 @@ export const TEAM = [
   { name: "P. Lama", role: "Marketing Lead" },
   { name: "B. Thapa", role: "Sales Executive" },
   { name: "M. Rai", role: "Business Development Officer" },
-] as const; // names are ⟨TBC⟩ → CONTENT-TODO
+] as const; // names are ⟨TBC⟩
 
 export const ROADMAP = {
   eyebrow: "Roadmap",

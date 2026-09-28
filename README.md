@@ -49,15 +49,9 @@ Copy `.env.example` to `.env` for local overrides. All are optional locally:
 - `hooks/` — client orchestration (`useContactForm`)
 - `app/globals.css` — the three-layer token system; hex literals live nowhere else
 
-## Content placeholders
-
-Copy that still needs real client input is tracked in [CONTENT-TODO.md](CONTENT-TODO.md)
-(all are data-file edits — no code changes required).
-
 ## Docs
 
-- Design/implementation plan: `docs/plans/`
-- Execution playbook + sprint briefs: `docs/execution/` (EXECUTION.md, SPRINT-1..4.md,
-  PROGRESS.md, CHECKLIST-R.md, REVIEW-REQUEST-S*.md)
-- **Deploying:** see [docs/execution/DEPLOY-RUNBOOK.md](docs/execution/DEPLOY-RUNBOOK.md)
+- **Deploying:** see [docs/DEPLOY-RUNBOOK.md](docs/DEPLOY-RUNBOOK.md)
   — deployment is performed by the site owner, not by tooling.
+- Copy marked ⟨TBC⟩ in `lib/data/` still needs real client input
+  (all are data-file edits — no code changes required).

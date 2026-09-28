@@ -7,9 +7,8 @@
  * console errors, layout shift, long tasks, counter integrity), and merges a
  * human/AI rubric score into one overall 0–10 verdict.
  *
- * Loop rule (docs/plans/2026-09-28-gsap-motion-redesign-design.md): re-run
- * after each improvement round until overall >= 8, max 4 rounds, best round
- * kept. A failed hard gate caps the overall score at 7.
+ * Loop rule: re-run after each improvement round until overall >= 8, max 4
+ * rounds, best round kept. A failed hard gate caps the overall score at 7.
  *
  * Usage:
  *   node scripts/review-animations.mjs --round 1 \
