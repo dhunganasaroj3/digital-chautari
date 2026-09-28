@@ -25,12 +25,14 @@ jobs:
         with: { node-version: 22, cache: pnpm }
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
-      - run: pnpm typecheck
+      # Build before typecheck — the LayoutProps/etc. globals come from
+      # .next/types, which a build generates (absent on a fresh checkout).
       - run: pnpm build
         env:
           NEXT_PUBLIC_STATIC_EXPORT: "1"
           NEXT_PUBLIC_BASE_PATH: /digital-chautari
           NEXT_PUBLIC_SITE_URL: https://dhunganasaroj3.github.io/digital-chautari
+      - run: pnpm typecheck
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with: { path: out }

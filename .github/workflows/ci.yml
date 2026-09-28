@@ -10,11 +10,12 @@ jobs:
         with: { node-version: 22, cache: pnpm }
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
-      - run: pnpm typecheck
       # Build the same static export the deploy workflow publishes (GitHub
       # Pages), then run Lighthouse against it — `next start` can't serve
-      # an output:export build.
+      # an output:export build. Build precedes typecheck because the
+      # LayoutProps globals are generated into .next/types.
       - run: pnpm build
         env:
           NEXT_PUBLIC_STATIC_EXPORT: "1"
+      - run: pnpm typecheck
       - run: pnpm exec lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand="npx -y serve out"
